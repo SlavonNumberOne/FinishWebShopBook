@@ -16,10 +16,9 @@ namespace WebShop.BusinessLogic.Servises
             _repository = repository;
         }
        public async Task<IEnumerable<Book>> Get()
-        {
+       {
             return await _repository.Get();
-            
-        }
+       }
         public async Task<Book> GetById(string id)
         {
             return await _repository.GetById(id);

@@ -34,6 +34,7 @@ namespace WebShop.DataAccess1.EFRepositories
         public Book Update(Book book)
         {
             _context.Update(book).State = EntityState.Modified;
+            _context.SaveChangesAsync();
             return book;
 
         }
@@ -43,6 +44,7 @@ namespace WebShop.DataAccess1.EFRepositories
             {
                 Book book = _context.Books.Find(id);
                 var res = _context.Books.Remove(book);
+                _context.SaveChangesAsync();
                 return true;
             }
             catch (Exception ex)

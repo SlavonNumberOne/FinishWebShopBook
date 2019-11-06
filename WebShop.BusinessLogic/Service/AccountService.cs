@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebShop.BusinessLogic.Servises
 {
-    class AccountService
+   public class AccountService
     {
 
     }

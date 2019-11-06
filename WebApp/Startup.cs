@@ -20,6 +20,10 @@ using WebShop.DataAccess1.EFRepositories;
 using WebShop.DataAccess1.Initialization;
 using WebShop.DataAccess1.Interfaces;
 using WebShop.DataAccess1;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace WebApp
 {
@@ -49,8 +53,37 @@ namespace WebApp
 
         x => x.MigrationsAssembly("WebApplication")));
             //options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>();
+            services.AddIdentity<IdentityUser, IdentityRole>(options=>options.Password.RequireNonAlphanumeric = false)
+                .AddEntityFrameworkStores<ApplicationContext>()
+                .AddDefaultTokenProviders();
+            // services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>();
+
+            // ===== Add Jwt Authentication ========
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear(); // => remove default claims
+            services
+                .AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+                })
+                .AddJwtBearer(cfg =>
+                {
+                    cfg.RequireHttpsMetadata = false;
+                    cfg.SaveToken = true;
+                    cfg.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidIssuer = Configuration["JwtIssuer"],
+                        ValidAudience = Configuration["JwtIssuer"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtKey"])),
+                        ClockSkew = TimeSpan.Zero // remove delay of token when expire
+                    };
+                });
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             services.AddTransient<IBookService, BookService>();
             // services.AddTransient<IAccountService, AccountService>();
             services.AddScoped<IAuthorService, AuthorService>();

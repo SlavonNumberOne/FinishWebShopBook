@@ -6,30 +6,31 @@ using System;
 
 namespace WebShop.DataAccess1.Context
 {
-    public class ApplicationContext : IdentityDbContext<User>
+    public class ApplicationContext : IdentityDbContext<User, Role, string>
     {
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
             Database.EnsureCreated();
         }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Role> Roles { get; set; }
+
         public DbSet<Book> Books { get; set; }
-        public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<AuthorBook> AuthorBooks { get; set; }
         public DbSet<Order> Orders { get; set;}
         public DbSet<OrderItem> OrderItems { get; set; }
 
-        //internal void SaveChanges()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        private static string GetConnectionString()
+        {
+            const string databaseName = "webapijwt";
+            const string databaseUser = "";
+            const string databasePass = "";
 
-        //internal object Entry(User user)
-        //{
-        //    throw new NotImplementedException();
-        //}
+            return $"Server=localhost;" +
+                   $"database={databaseName};" +
+                   $"uid={databaseUser};" +
+                   $"pwd={databasePass};" +
+                   $"pooling=true;";
+        }
     }
 }

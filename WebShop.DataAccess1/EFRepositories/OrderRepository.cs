@@ -30,11 +30,13 @@ namespace WebShop.DataAccess1.EFRepositories
         public async Task<Order> Add(Order order)
         {
             var resord = await _context.Orders.AddAsync(order);
+            await _context.SaveChangesAsync();
             return resord.Entity;
         }
         public Order Update(Order order)
         {
             _context.Update(order).State = EntityState.Modified;
+            _context.SaveChangesAsync();
             return order;
         }
         public bool Delete(string id)
@@ -43,6 +45,7 @@ namespace WebShop.DataAccess1.EFRepositories
             {
                 Order order = _context.Orders.Find(id);
                 var res = _context.Orders.Remove(order);
+                _context.SaveChangesAsync();
                 return true;
             }
             catch (Exception ex)
