@@ -5,108 +5,96 @@ using Microsoft.Extensions.Logging;
 using WebShop.BusinessLogic.ViewModels;
 using WebShop.DataAccess1.Entities;
 using WebShop.DataAccess1;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Security.Claims;
 //using WebShop.BusinessLogic;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Text;
-using System.ComponentModel.DataAnnotations;
-using WebShop.BusinessLogic.Servises.Interface;
-using System.Linq;
-using WebShop.DataAccess1.Entities.Base;
-using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
-
-
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace WebApi.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
     public class AccountController : Controller
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly IConfiguration _configuration;
+        // GET: /<controller>/
+        private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
+        private readonly ILogger _logger;
 
-      //  private readonly IAccountService _accountService;
-
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IConfiguration configuration)
+        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, ILogger<AccountController> logger)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            _configuration = configuration;
-         //   _accountService = accountService;
+            _logger = logger;
         }
-        public class ReginLog : BaseEntity
+        [HttpGet]
+        public IActionResult Register()
         {
-            [Required]
-            public string Email { get; set; }
-            [Required]
-            public string Password { get; set; }
+            return View();
         }
-        public string GetLogin()
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            return "getlogin";
-        }
-        
-        [HttpPost("login")]
-        public async Task<object> Login([FromBody] ReginLog model)
-        {
-            var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, false);
-            if (result.Succeeded)
+            if (ModelState.IsValid)
             {
-                var appUser = _userManager.Users.SingleOrDefault(r => r.Email == model.Email);
-                return await GenerateJwtToken(model.Email, appUser);
-            }
-            throw new ApplicationException("INVALID_LOGIN_ATTEMPT");
-        }
-        
-        [HttpPost("register")]
-        public async Task<object> Register([FromBody] ReginLog model)
-        {
-            var user = new IdentityUser { UserName = model.Email, Email = model.Email };
-            try
-            {
-            var result = await _userManager.CreateAsync(user, model.Password);
+                User user = new User { Name = model.Name, Surname = model.Surname, Build = model.Build, Phone = model.Phone, Email = model.Email, Address = model.Address };
+                // добавляем пользователя
+                var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    // установка куки
                     await _signInManager.SignInAsync(user, false);
-                    return await GenerateJwtToken(model.Email, user);
+                    return RedirectToAction("Account");
+                }
+                else
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
                 }
             }
-            catch(Exception ex)
-            {
-                ;
-            }
-            
-            throw new ApplicationException("UNKNOWN_ERROR");
+            return View(model);
         }
-        private async Task<object> GenerateJwtToken(string email, IdentityUser user)
+
+        [HttpGet]
+        public IActionResult Login(string returnUrl = null)
         {
-            var claims = new List<Claim>
+            return View(new LoginViewModel { ReturnUrl = returnUrl });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result =
+                    await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
+                if (result.Succeeded)
                 {
-                    new Claim(JwtRegisteredClaimNames.Sub, email),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim(ClaimTypes.NameIdentifier, user.Id)
-                };
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtKey"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            var expires = DateTime.Now.AddDays(Convert.ToDouble(_configuration["JwtExpireDays"]));
-            var token = new JwtSecurityToken(
-                _configuration["JwtIssuer"],
-                _configuration["JwtIssuer"],
-                claims,
-                expires: expires,
-                signingCredentials: creds
-            );
-            return new JwtSecurityTokenHandler().WriteToken(token);
+                    // проверяем, принадлежит ли URL приложению
+                    if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
+                    {
+                        return Redirect(model.ReturnUrl);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Account");
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Неправильный логин и (или) пароль");
+                }
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> LogOff()
+        {
+            // удаляем аутентификационные куки
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Account");
         }
     }
 }
-

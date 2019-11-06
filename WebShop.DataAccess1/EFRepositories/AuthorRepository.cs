@@ -28,7 +28,6 @@ namespace WebShop.DataAccess1.EFRepositories
         public async Task<Author> AddAuthor(Author author)
         {
             var res = await _context.Authors.AddAsync(author);
-            await _context.SaveChangesAsync();
             return res.Entity;
         }
         public  Author UpdateAuthor(Author author)
@@ -42,7 +41,6 @@ namespace WebShop.DataAccess1.EFRepositories
             {
                 Author author = _context.Authors.Find(id);
                 var resaut = _context.Authors.Remove(author);
-               // _context.SaveChangesAsync();
                 return true;
             }
             catch (Exception ex)

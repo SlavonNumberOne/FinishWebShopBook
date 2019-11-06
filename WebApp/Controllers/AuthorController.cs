@@ -16,43 +16,41 @@ namespace WebApi.Controllers
     public class AuthorController : Controller
     {
         private readonly ILogger<AuthorController> _logger;
-        private readonly IAuthorService _iauthorservice;
-        public AuthorController(ILogger<AuthorController> logger, IAuthorService iauthorService)
+        public AuthorController(ILogger<AuthorController> logger)
         {
             _logger = logger;
-            _iauthorservice = iauthorService;
         }
 
         // GET: /<controller>/
-        //private readonly IAuthorService _iauthorservice;
-        //public AuthorController(IAuthorService iauthorservice)
-        //{
-        //    _iauthorservice = iauthorservice;
-        //}
-        [HttpGet("getauthor")]
+        private readonly IAuthorService _iauthorservice;
+        public AuthorController(IAuthorService iauthorservice)
+        {
+            _iauthorservice = iauthorservice;
+        }
+        [HttpGet("GetAuthor")]
         public async Task<IActionResult> GetAuthor()
         {
             return Ok(await _iauthorservice.GetAuthor());
         }
-        [HttpGet("getidauthor")]
+        [HttpGet("GetIdAuthor")]
         public async Task<IActionResult> GetById(string id)
         {
             return Ok(await _iauthorservice.GetById(id));
 
         }
-        [HttpPost("addauthor")]
+        [HttpPost("AddAuthor")]
         public async Task<IActionResult> AddAuthor(Author author)
         {
-            //return Ok(await _iauthorservice.AddAuthor(author));
             return Ok(await _iauthorservice.AddAuthor(author));
+
         }
-        [HttpPut("updateauthor")]
+        [HttpPut("UpdateAuthor")]
         public IActionResult UpdateAuthor(Author author)
         {
             return Ok(_iauthorservice.UpdateAuthor(author));
         }
 
-        [HttpDelete("deleteauthor")]
+        [HttpDelete("DeleteAuthor")]
         public IActionResult DeleteAuthor(string id)
         {
             return Ok(_iauthorservice.DeleteAuthor(id));
