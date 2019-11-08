@@ -5,96 +5,117 @@ using Microsoft.Extensions.Logging;
 using WebShop.BusinessLogic.ViewModels;
 using WebShop.DataAccess1.Entities;
 using WebShop.DataAccess1;
-//using WebShop.BusinessLogic;
+using Microsoft.Extensions.Configuration;
+using System.Linq;
+using System;
+using System.Collections.Generic;
+using System.Security.Claims;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.AspNetCore.Authorization;
+using System.Net.Http;
+using WebShop.DataAccess1.Context;
+using WebApp.Filters;
+
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace WebApi.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class AccountController : Controller
     {
-        // GET: /<controller>/
-        private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        private readonly ILogger _logger;
+        private readonly UserManager<User> _userManager;
+        private readonly IConfiguration _configuration;
+        private readonly ILogger<AccountController> _logger;
 
-        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, ILogger<AccountController> logger)
+        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, IConfiguration configuration, ILogger<AccountController> logger)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _configuration = configuration;
             _logger = logger;
         }
+
+        [ExceptionFilter]
         [HttpGet]
-        public IActionResult Register()
+        public string GetLogRegis()
         {
-            return View();
+            return "getregist";
         }
-        [HttpPost]
-        public async Task<IActionResult> Register(RegisterViewModel model)
+
+        [ExceptionFilter]
+        [HttpPost("login")]
+        public async Task<object> Login([FromBody] User login)
         {
-            if (ModelState.IsValid)
+            var result = await _signInManager.PasswordSignInAsync(login.Email, login.PasswordHash, false, false);
+
+            try
             {
-                User user = new User { Name = model.Name, Surname = model.Surname, Build = model.Build, Phone = model.Phone, Email = model.Email, Address = model.Address };
-                // добавляем пользователя
-                var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    // установка куки
+                    var appUser = _userManager.Users.SingleOrDefault(r => r.Email == login.Email);
+                    return await GenerateJwtToken(login.Email, appUser);
+                }
+            }
+            catch (Exception ex)
+            {
+                ;
+            }
+            throw new ApplicationException("INVALID_LOGIN_ATTEMPT");
+        }
+
+        [ExceptionFilter]
+        [HttpPost("register")]
+        public async Task<object> Register([FromBody] User regist)
+        {
+         _logger.LogInformation("Log message in the Register() method");
+            var user = new User
+            {
+                UserName = regist.Name,
+                Name = regist.Name,
+                Email = regist.Email,
+                PasswordHash = regist.PasswordHash
+            };
+                var result = await _userManager.CreateAsync(user, regist.PasswordHash);
+          
+                if (result.Succeeded)
+                {
                     await _signInManager.SignInAsync(user, false);
-                    return RedirectToAction("Account");
+                    return GenerateJwtToken(regist.Email, user);
+
                 }
-                else
-                {
-                    foreach (var error in result.Errors)
-                    {
-                        ModelState.AddModelError(string.Empty, error.Description);
-                    }
-                }
-            }
-            return View(model);
+                throw new ApplicationException("UNKNOWN_ERROR");
+          
         }
 
-        [HttpGet]
-        public IActionResult Login(string returnUrl = null)
+        [ExceptionFilter]
+        private async Task<object> GenerateJwtToken(string email, User user)
         {
-            return View(new LoginViewModel { ReturnUrl = returnUrl });
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                var result =
-                    await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
-                if (result.Succeeded)
+            var claims = new List<Claim>
                 {
-                    // проверяем, принадлежит ли URL приложению
-                    if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
-                    {
-                        return Redirect(model.ReturnUrl);
-                    }
-                    else
-                    {
-                        return RedirectToAction("Account");
-                    }
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Неправильный логин и (или) пароль");
-                }
-            }
-            return View(model);
-        }
+                    new Claim(JwtRegisteredClaimNames.Sub, email),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    new Claim(ClaimTypes.NameIdentifier, user.Id)
+                };
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> LogOff()
-        {
-            // удаляем аутентификационные куки
-            await _signInManager.SignOutAsync();
-            return RedirectToAction("Account");
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtKey"]));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var expires = DateTime.Now.AddDays(Convert.ToDouble(_configuration["JwtExpireDays"]));
+
+            var token = new JwtSecurityToken(
+                _configuration["JwtIssuer"],
+                _configuration["JwtIssuer"],
+                claims,
+                expires: expires,
+                signingCredentials: creds
+            );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }
 }
+

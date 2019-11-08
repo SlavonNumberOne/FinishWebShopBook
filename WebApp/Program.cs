@@ -21,28 +21,17 @@ namespace WebApp
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+
+            .ConfigureLogging(logBuilder =>
+            {
+                logBuilder.ClearProviders(); // removes all providers from LoggerFactory
+                logBuilder.AddConsole();
+                logBuilder.AddTraceSource("Information, ActivityTracing"); // Add Trace listener provider
+            })
+
+
                 .UseStartup<Startup>();
 
-        //public static IWebHost CreateWebHostBuilder(string[] args) =>
-        //  WebHost.CreateDefaultBuilder(args)
-        //    .UseStartup<Startup>()
-        ////    .Build();
-        //public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-        //  WebHost.CreateDefaultBuilder(args)
-
-        //     .ConfigureLogging(logBuilder =>
-        //     {
-        //         logBuilder.ClearProviders(); // removes all providers from LoggerFactory
-        //         logBuilder.AddConsole();
-        //         logBuilder.AddTraceSource("Information, ActivityTracing"); // Add Trace listener provider
-        //     })
-
-        //     // .UseUrls(new string[] { "https://*:5000", "https://*:5001", "https://*:5002", "https://*:5003" })
-        //      .UseStartup<Startup>()
-        //      .UseContentRoot(Directory.GetCurrentDirectory())
-        //      .UseDefaultServiceProvider((context, options) =>
-        //      {
-        //          options.ValidateScopes = context.HostingEnvironment.IsDevelopment();
-        //      });
+     
     }
 }

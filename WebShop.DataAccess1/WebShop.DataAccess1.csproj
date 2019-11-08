@@ -13,6 +13,8 @@
     <Compile Remove="Migrations\20191105155515_InitBook.Designer.cs" />
     <Compile Remove="Migrations\20191105161232_BookInit.cs" />
     <Compile Remove="Migrations\20191105161232_BookInit.Designer.cs" />
+    <Compile Remove="Migrations\20191105161251_BookInit.cs" />
+    <Compile Remove="Migrations\20191105161251_BookInit.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

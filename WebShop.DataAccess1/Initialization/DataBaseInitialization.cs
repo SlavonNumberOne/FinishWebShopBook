@@ -35,5 +35,24 @@ namespace WebShop.DataAccess1.Initialization
             }
             _context.SaveChanges();
         }
+        public void initAuthor()
+        {
+            if (_context.Authors.Any())
+            {
+                return;   // DB has been seeded
+            }
+            var Authors = new Author[]
+            {
+                new Author{ LastName = "Puuu",   FirstName = "Alex", Year = 1998 },
+                new Author{ LastName = "Pupka",   FirstName = "Oleg", Year = 2500 },
+            };
+
+            foreach (Author a in Authors)
+            {
+                _context.Authors.Add(a);
+            }
+            _context.SaveChanges();
+        }
+
     }
 }

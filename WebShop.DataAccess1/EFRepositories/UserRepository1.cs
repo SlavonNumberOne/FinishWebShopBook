@@ -30,9 +30,10 @@ namespace WebShop.DataAccess1.EFRepositories
             //}
             public async Task<User> Add(User user)
             {
-                var resus = await _context.Users.AddAsync(user);
-                return resus.Entity;
-            }
+            var res = await _context.Users.AddAsync(user);
+            await _context.SaveChangesAsync();
+            return res.Entity;
+        }
         public User Update(User user)
         {
             _context.Set<User>().Update(user);

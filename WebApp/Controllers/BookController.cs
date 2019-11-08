@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 //using System.Web.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using WebApp.Filters;
 using WebShop.BusinessLogic.Servises;
 using WebShop.BusinessLogic.Servises.Interface;
 using WebShop.DataAccess1.Entities;
@@ -30,7 +31,16 @@ namespace WebApi.Controllers
         [HttpGet("get")]
         public async Task<IActionResult> Get()
         {
-           return Ok(await _ibookservice.Get());
+            try
+            {
+                _logger.LogInformation("Fetching all the Students from the storage");
+                return Ok(await _ibookservice.Get());
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Something went wrong: {ex}");
+                return StatusCode(500, "Internal server error");
+            }
         }
         [HttpGet("getbyid")]
         public async Task<IActionResult> GetById(string id)
@@ -42,14 +52,17 @@ namespace WebApi.Controllers
         public async Task<IActionResult> Add(Book book)
         {
             return Ok(await _ibookservice.Add(book));
+            
      
         }
+        [ExceptionFilter]
         [HttpPut("Update")]
         public IActionResult Update(Book book)
         {
           return Ok(_ibookservice.Update(book)); 
-        } 
+        }
 
+        [ExceptionFilter]
         [HttpDelete("Delete")]
         public IActionResult Delete(string id)
         {

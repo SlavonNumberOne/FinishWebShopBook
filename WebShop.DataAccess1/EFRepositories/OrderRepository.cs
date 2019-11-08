@@ -30,6 +30,7 @@ namespace WebShop.DataAccess1.EFRepositories
         public async Task<Order> Add(Order order)
         {
             var resord = await _context.Orders.AddAsync(order);
+            await _context.SaveChangesAsync();
             return resord.Entity;
         }
         public Order Update(Order order)

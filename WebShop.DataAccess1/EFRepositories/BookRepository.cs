@@ -50,6 +50,5 @@ namespace WebShop.DataAccess1.EFRepositories
                 return false;
             }
         }
-
     }
 }
