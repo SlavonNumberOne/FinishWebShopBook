@@ -10,7 +10,7 @@ using WebShop.DataAccess1.Context;
 namespace WebShop.DataAccess1.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20191107160145_BookInit")]
+    [Migration("20191108142820_BookInit")]
     partial class BookInit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -251,8 +251,6 @@ namespace WebShop.DataAccess1.Migrations
 
                     b.Property<string>("NormalizedUserName")
                         .HasMaxLength(256);
-
-                    b.Property<string>("Password");
 
                     b.Property<string>("PasswordHash");
 

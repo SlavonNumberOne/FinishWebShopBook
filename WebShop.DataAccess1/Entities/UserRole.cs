@@ -1,4 +1,5 @@
-﻿using WebShop.DataAccess1;
+﻿using Microsoft.AspNetCore.Identity;
+using WebShop.DataAccess1;
 using WebShop.DataAccess1.Entities.Base;
 
 namespace WebShop.DataAccess1.Entities
