@@ -17,6 +17,9 @@ using Microsoft.AspNetCore.Authorization;
 using System.Net.Http;
 using WebShop.DataAccess1.Context;
 using WebApp.Filters;
+using System.Net.Mail;
+using WebShop.BusinessLogic.Service;
+using System.Data.Entity;
 
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -31,7 +34,6 @@ namespace WebApi.Controllers
         private readonly UserManager<User> _userManager;
         private readonly IConfiguration _configuration;
         private readonly ILogger<AccountController> _logger;
-
         public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, IConfiguration configuration, ILogger<AccountController> logger)
         {
             _userManager = userManager;
@@ -49,47 +51,39 @@ namespace WebApi.Controllers
 
         [ExceptionFilter]
         [HttpPost("login")]
-        public async Task<object> Login([FromBody] User login)
+        public async Task<object> Login([FromBody] LoginViewModel login)
         {
-            var result = await _signInManager.PasswordSignInAsync(login.Email, login.PasswordHash, false, false);
-
-            try
-            {
-                if (result.Succeeded)
+            _logger.LogInformation("Log message in the Login() method");
+            var result = await _signInManager.PasswordSignInAsync(login.Email, login.Password, false, false);
+                try
                 {
-                    var appUser = _userManager.Users.SingleOrDefault(r => r.Email == login.Email);
-                    return await GenerateJwtToken(login.Email, appUser);
+                    if (result.Succeeded)
+                    {
+                        var appUser = _userManager.Users.SingleOrDefault(u => u.Email == login.Email);
+                        return await GenerateJwtToken(login.Email, appUser);
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                ;
-            }
-            throw new ApplicationException("INVALID_LOGIN_ATTEMPT");
+                catch (Exception ex)
+                {
+                    ;
+                }
+             throw new ApplicationException("INVALID_LOGIN_ATTEMPT");
         }
 
         [ExceptionFilter]
         [HttpPost("register")]
         public async Task<object> Register([FromBody] User regist)
         {
-         _logger.LogInformation("Log message in the Register() method");
-            var user = new User
-            {
-                UserName = regist.Name,
-                Name = regist.Name,
-                Email = regist.Email,
-                PasswordHash = regist.PasswordHash
-            };
+               _logger.LogInformation("Log message in the Register() method");
+                var user = new User{UserName = regist.Email, Name = regist.Name, Email = regist.Email, PasswordHash = regist.PasswordHash};
+                                     
                 var result = await _userManager.CreateAsync(user, regist.PasswordHash);
-          
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, false);
                     return GenerateJwtToken(regist.Email, user);
-
                 }
                 throw new ApplicationException("UNKNOWN_ERROR");
-          
         }
 
         [ExceptionFilter]
@@ -116,6 +110,7 @@ namespace WebApi.Controllers
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+      
     }
 }
 

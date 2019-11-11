@@ -574,3 +574,80 @@ WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
 2019-11-08T16:32:37.0953328+02:00 0HLR4B00UJI79:00000002 [INF] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8" (7ec2a4e9)
 2019-11-08T16:32:37.0982722+02:00 0HLR4B00UJI79:00000002 [INF] Executed action "WebApi.Controllers.AccountController.Register (WebApp)" in 509.1614ms (afa2e885)
 2019-11-08T16:32:37.1037050+02:00 0HLR4B00UJI79:00000002 [INF] Request finished in 529.3811000000001ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-08T17:17:26.2519670+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-08T17:17:26.4397603+02:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-08T17:17:26.4587707+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-08T17:17:27.0876857+02:00 0HLR4BR1Q4DU9:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-08T17:17:27.2196948+02:00 0HLR4BR1Q4DU9:00000001 [INF] Route matched with "{action = \"GetLogRegis\", controller = \"Account\"}". Executing controller action with signature "System.String GetLogRegis()" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-08T17:17:27.2273135+02:00 0HLR4BR1Q4DU9:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-08T17:17:27.2299813+02:00 0HLR4BR1Q4DU9:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-08T17:17:27.2428220+02:00 0HLR4BR1Q4DU9:00000001 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-11-08T17:17:27.2627419+02:00 0HLR4BR1Q4DU9:00000001 [INF] Executed action "WebApi.Controllers.AccountController.GetLogRegis (WebApp)" in 34.685300000000005ms (afa2e885)
+2019-11-08T17:17:27.2643607+02:00 0HLR4BR1Q4DU9:00000001 [INF] Request finished in 183.1694ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-08T17:17:38.5381454+02:00 0HLR4BR1Q4DUB:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/author/getauthor application/json 61 (ca22a1cb)
+2019-11-08T17:17:38.5471305+02:00 0HLR4BR1Q4DUB:00000001 [INF] Route matched with "{action = \"GetAuthor\", controller = \"Author\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAuthor()" on controller "WebApi.Controllers.AuthorController" ("WebApp"). (122b2fdf)
+2019-11-08T17:17:38.5809736+02:00 0HLR4BR1Q4DUB:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-08T17:17:38.5874419+02:00 0HLR4BR1Q4DUB:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-08T17:17:38.6270991+02:00 0HLR4BR1Q4DUB:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[FirstName], [a].[LastName], [a].[Year]
+FROM [Authors] AS [a]" (0723d8ff)
+2019-11-08T17:17:38.6765139+02:00 0HLR4BR1Q4DUB:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[WebShop.DataAccess1.Entities.Author, WebShop.DataAccess1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-11-08T17:17:38.6890273+02:00 0HLR4BR1Q4DUB:00000001 [INF] Executed action "WebApi.Controllers.AuthorController.GetAuthor (WebApp)" in 141.6742ms (afa2e885)
+2019-11-08T17:17:38.6893479+02:00 0HLR4BR1Q4DUB:00000001 [INF] Request finished in 151.4915ms 200 application/json; charset=utf-8 (791a596a)
+2019-11-08T17:18:30.9019440+02:00 0HLR4BR1Q4DUB:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/author/addauthor application/json 86 (ca22a1cb)
+2019-11-08T17:18:30.9148586+02:00 0HLR4BR1Q4DUB:00000002 [INF] Route matched with "{action = \"AddAuthor\", controller = \"Author\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddAuthor(WebShop.DataAccess1.Entities.Author)" on controller "WebApi.Controllers.AuthorController" ("WebApp"). (122b2fdf)
+2019-11-08T17:18:30.9162820+02:00 0HLR4BR1Q4DUB:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-08T17:18:30.9193844+02:00 0HLR4BR1Q4DUB:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-08T17:18:30.9375922+02:00 0HLR4BR1Q4DUB:00000002 [INF] Executing ObjectResult, writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (8a1b66c8)
+2019-11-08T17:18:30.9390977+02:00 0HLR4BR1Q4DUB:00000002 [INF] Executed action "WebApi.Controllers.AuthorController.AddAuthor (WebApp)" in 24.0225ms (afa2e885)
+2019-11-08T17:18:30.9394004+02:00 0HLR4BR1Q4DUB:00000002 [INF] Request finished in 37.819700000000005ms 400 application/problem+json; charset=utf-8 (791a596a)
+2019-11-08T17:18:38.5735649+02:00 0HLR4BR1Q4DUB:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/author/addauthor application/json 85 (ca22a1cb)
+2019-11-08T17:18:38.5759547+02:00 0HLR4BR1Q4DUB:00000003 [INF] Route matched with "{action = \"AddAuthor\", controller = \"Author\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddAuthor(WebShop.DataAccess1.Entities.Author)" on controller "WebApi.Controllers.AuthorController" ("WebApp"). (122b2fdf)
+2019-11-08T17:18:38.5808239+02:00 0HLR4BR1Q4DUB:00000003 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-08T17:18:38.5915249+02:00 0HLR4BR1Q4DUB:00000003 [INF] Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-08T17:18:38.7872745+02:00 0HLR4BR1Q4DUB:00000003 [INF] Executed DbCommand ("32"ms) [Parameters=["@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Authors] ([Id], [FirstName], [LastName], [Year])
+VALUES (@p0, @p1, @p2, @p3);" (0723d8ff)
+2019-11-08T17:18:38.8119950+02:00 0HLR4BR1Q4DUB:00000003 [INF] Executing ObjectResult, writing value of type '"WebShop.DataAccess1.Entities.Author"'. (8a1b66c8)
+2019-11-08T17:18:38.8134834+02:00 0HLR4BR1Q4DUB:00000003 [INF] Executed action "WebApi.Controllers.AuthorController.AddAuthor (WebApp)" in 237.22480000000002ms (afa2e885)
+2019-11-08T17:18:38.8146484+02:00 0HLR4BR1Q4DUB:00000003 [INF] Request finished in 241.56730000000002ms 200 application/json; charset=utf-8 (791a596a)
+2019-11-08T17:46:47.9050722+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-08T17:46:48.0959888+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-08T17:46:48.1142288+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-08T17:46:48.9842195+02:00 0HLR4CBESUU7Q:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-08T17:46:49.0920370+02:00 0HLR4CBESUU7Q:00000001 [INF] Route matched with "{action = \"GetLogRegis\", controller = \"Account\"}". Executing controller action with signature "System.String GetLogRegis()" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-08T17:46:49.0964592+02:00 0HLR4CBESUU7Q:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-08T17:46:49.1000301+02:00 0HLR4CBESUU7Q:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-08T17:46:49.1103585+02:00 0HLR4CBESUU7Q:00000001 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-11-08T17:46:49.1397041+02:00 0HLR4CBESUU7Q:00000001 [INF] Executed action "WebApi.Controllers.AccountController.GetLogRegis (WebApp)" in 39.5751ms (afa2e885)
+2019-11-08T17:46:49.1410265+02:00 0HLR4CBESUU7Q:00000001 [INF] Request finished in 160.7422ms 200 text/plain; charset=utf-8 (791a596a)

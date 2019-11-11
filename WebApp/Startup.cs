@@ -57,6 +57,7 @@ namespace WebApp
             services.AddScoped<ApplicationContext>();
             services.AddScoped<DataBaseInitialization>();
 
+            // ===== Add Jwt Authentication ========
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear(); // => remove default claims
             services
                 .AddAuthentication(options =>

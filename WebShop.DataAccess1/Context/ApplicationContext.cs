@@ -6,7 +6,7 @@ using System;
 
 namespace WebShop.DataAccess1.Context
 {
-    public class ApplicationContext : IdentityDbContext<User, Role, string>
+    public class ApplicationContext : IdentityDbContext<User>
     {
           public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
@@ -17,6 +17,7 @@ namespace WebShop.DataAccess1.Context
         public DbSet<AuthorBook> AuthorBooks { get; set; }
         public DbSet<Order> Orders { get; set;}
         public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<Role> Roles { get; set; }
 
         private static string GetConnectionString()
         {

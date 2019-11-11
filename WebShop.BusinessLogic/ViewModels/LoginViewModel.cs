@@ -8,9 +8,11 @@ namespace WebShop.BusinessLogic.ViewModels
    public class LoginViewModel
     {
         [Required]
-        public String Name { get; set; }
-
+        [Display(Name = "Email")]
+        public String Email { get; set; }
         [Required]
+        [Display(Name = "Password")]
         public String Password { get; set; }
+    
     }
 }
