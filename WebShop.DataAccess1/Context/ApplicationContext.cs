@@ -17,7 +17,7 @@ namespace WebShop.DataAccess1.Context
         public DbSet<AuthorBook> AuthorBooks { get; set; }
         public DbSet<Order> Orders { get; set;}
         public DbSet<OrderItem> OrderItems { get; set; }
-        public DbSet<Role> Roles { get; set; }
+    
 
         private static string GetConnectionString()
         {

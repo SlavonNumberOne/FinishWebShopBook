@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 //using System.Web.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -14,10 +15,11 @@ using WebShop.DataAccess1.Entities;
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace WebApi.Controllers
-{
+{ 
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
-
+   
     public class BookController : ControllerBase
     {
         private readonly ILogger<BookController> _logger;
@@ -28,13 +30,14 @@ namespace WebApi.Controllers
             _ibookservice = ibookservice;
         }
 
-        [HttpGet("get")]
-        public async Task<IActionResult> Get()
+        [HttpGet("getbooks")]
+    
+        public async Task<IActionResult> GetBooks()
         {
             try
             {
                 _logger.LogInformation("Fetching all the Students from the storage");
-                return Ok(await _ibookservice.Get());
+                return Ok(await _ibookservice.GetBooks());
             }
             catch (Exception ex)
             {

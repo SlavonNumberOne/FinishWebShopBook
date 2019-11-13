@@ -15,9 +15,9 @@ namespace WebShop.BusinessLogic.Servises
         {
             _repository = repository;
         }
-       public async Task<IEnumerable<Book>> Get()
+       public async Task<IEnumerable<Book>> GetBooks()
         {
-            return await _repository.Get();
+            return await _repository.GetBooks();
             
         }
         public async Task<Book> GetById(string id)
@@ -32,9 +32,9 @@ namespace WebShop.BusinessLogic.Servises
         {
             return _repository.Update(book);
         }
-        public  bool Delete(string id)
+        public bool Delete(string id)
         {
-            return  _repository.Delete(id);
+            return _repository.Delete(id);
         }
 
     }

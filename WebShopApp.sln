@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop.BusinessLogic", "We
 		{AA0D890F-5BC3-4D26-B803-E682B1609AA4} = {AA0D890F-5BC3-4D26-B803-E682B1609AA4}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShop.DataAccess1", "WebShop.DataAccess1\WebShop.DataAccess1.csproj", "{AA0D890F-5BC3-4D26-B803-E682B1609AA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop.DataAccess1", "WebShop.DataAccess1\WebShop.DataAccess1.csproj", "{AA0D890F-5BC3-4D26-B803-E682B1609AA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

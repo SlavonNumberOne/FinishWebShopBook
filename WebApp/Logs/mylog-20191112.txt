@@ -1,0 +1,1468 @@
+2019-11-12T09:44:40.9304461+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-12T09:44:41.1640316+02:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T09:44:41.1841882+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T09:44:42.2380793+02:00 0HLR78GMR2SH2:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-12T09:44:42.3800830+02:00 0HLR78GMR2SH2:00000001 [INF] Route matched with "{action = \"GetLogRegis\", controller = \"Account\"}". Executing controller action with signature "System.String GetLogRegis()" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T09:44:42.3874953+02:00 0HLR78GMR2SH2:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T09:44:42.3943700+02:00 0HLR78GMR2SH2:00000001 [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T09:44:42.4067202+02:00 0HLR78GMR2SH2:00000001 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-11-12T09:44:42.4414920+02:00 0HLR78GMR2SH2:00000001 [INF] Executed action "WebApi.Controllers.AccountController.GetLogRegis (WebApp)" in 54.687000000000005ms (afa2e885)
+2019-11-12T09:44:42.4437949+02:00 0HLR78GMR2SH2:00000001 [INF] Request finished in 211.66240000000002ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T09:44:42.5137827+02:00 0HLR78GMR2SH2:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5001/favicon.ico   (ca22a1cb)
+2019-11-12T09:44:42.5233781+02:00 0HLR78GMR2SH2:00000002 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-11-12T09:44:42.5514119+02:00 0HLR78GMR2SH2:00000002 [INF] Request finished in 37.6436ms 404  (791a596a)
+2019-11-12T09:45:27.9430703+02:00 0HLR78GMR2SH4:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/register application/json 90 (ca22a1cb)
+2019-11-12T09:45:27.9647307+02:00 0HLR78GMR2SH4:00000001 [INF] Route matched with "{action = \"Register\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Register(WebShop.DataAccess1.User)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T09:45:28.0007824+02:00 0HLR78GMR2SH4:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T09:45:28.0096877+02:00 0HLR78GMR2SH4:00000001 [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T09:45:28.0453006+02:00 0HLR78GMR2SH4:00000001 [INF] Log message in the Register() method (46f49f21)
+2019-11-12T09:45:28.2201182+02:00 0HLR78GMR2SH4:00000001 [INF] Executed DbCommand ("27"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-11-12T09:45:28.3955385+02:00 0HLR78GMR2SH4:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 4000), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [Name], [NormalizedEmail], [NormalizedUserName], [Password], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [Surname], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);" (0723d8ff)
+2019-11-12T09:45:28.4827490+02:00 0HLR78GMR2SH4:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-11-12T09:45:28.5202200+02:00 0HLR78GMR2SH4:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-11-12T09:45:28.5349599+02:00 0HLR78GMR2SH4:00000001 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-11-12T09:45:28.7554860+02:00 0HLR78GMR2SH4:00000001 [INF] Executing ObjectResult, writing value of type '"System.Threading.Tasks.Task`1[[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (8a1b66c8)
+2019-11-12T09:45:28.7705496+02:00 0HLR78GMR2SH4:00000001 [INF] Executed action "WebApi.Controllers.AccountController.Register (WebApp)" in 805.5858000000001ms (afa2e885)
+2019-11-12T09:45:28.7721717+02:00 0HLR78GMR2SH4:00000001 [INF] Request finished in 829.3524ms 200 application/json; charset=utf-8 (791a596a)
+2019-11-12T09:46:15.5834006+02:00 0HLR78GMR2SH4:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/login application/json 90 (ca22a1cb)
+2019-11-12T09:46:15.5906626+02:00 0HLR78GMR2SH4:00000002 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Login(WebShop.BusinessLogic.ViewModels.LoginViewModel)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T09:46:15.5934046+02:00 0HLR78GMR2SH4:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T09:46:15.6042839+02:00 0HLR78GMR2SH4:00000002 [INF] Executed DbCommand ("10"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T09:46:15.6250033+02:00 0HLR78GMR2SH4:00000002 [INF] Executing ObjectResult, writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (8a1b66c8)
+2019-11-12T09:46:15.6301193+02:00 0HLR78GMR2SH4:00000002 [INF] Executed action "WebApi.Controllers.AccountController.Login (WebApp)" in 36.534ms (afa2e885)
+2019-11-12T09:46:15.6304281+02:00 0HLR78GMR2SH4:00000002 [INF] Request finished in 47.251400000000004ms 400 application/problem+json; charset=utf-8 (791a596a)
+2019-11-12T09:46:27.9246588+02:00 0HLR78GMR2SH4:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/login application/json 86 (ca22a1cb)
+2019-11-12T09:46:27.9270426+02:00 0HLR78GMR2SH4:00000003 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Login(WebShop.BusinessLogic.ViewModels.LoginViewModel)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T09:46:27.9286504+02:00 0HLR78GMR2SH4:00000003 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T09:46:27.9342309+02:00 0HLR78GMR2SH4:00000003 [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T09:46:27.9395615+02:00 0HLR78GMR2SH4:00000003 [INF] Log message in the Login() method (277c1ec8)
+2019-11-12T09:46:27.9492453+02:00 0HLR78GMR2SH4:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-11-12T09:46:27.9774581+02:00 0HLR78GMR2SH4:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-11-12T09:46:27.9840081+02:00 0HLR78GMR2SH4:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-11-12T09:46:27.9886327+02:00 0HLR78GMR2SH4:00000003 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-11-12T09:46:28.0084924+02:00 0HLR78GMR2SH4:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=["@__login_Email_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[Email] = @__login_Email_0" (0723d8ff)
+2019-11-12T09:46:28.0109168+02:00 0HLR78GMR2SH4:00000003 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-11-12T09:46:28.0115316+02:00 0HLR78GMR2SH4:00000003 [INF] Executed action "WebApi.Controllers.AccountController.Login (WebApp)" in 84.10520000000001ms (afa2e885)
+2019-11-12T09:46:28.0143730+02:00 0HLR78GMR2SH4:00000003 [INF] Request finished in 90.24430000000001ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T10:56:51.5204008+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-12T10:56:51.6951076+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T10:56:51.7109134+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T10:56:52.1904534+02:00 0HLR79P1A5Q14:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-12T10:56:52.2908772+02:00 0HLR79P1A5Q14:00000001 [INF] Route matched with "{action = \"GetLogRegis\", controller = \"Account\"}". Executing controller action with signature "System.String GetLogRegis()" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T10:56:52.2954605+02:00 0HLR79P1A5Q14:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T10:56:52.2986074+02:00 0HLR79P1A5Q14:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T10:56:52.3091841+02:00 0HLR79P1A5Q14:00000001 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-11-12T10:56:52.3274951+02:00 0HLR79P1A5Q14:00000001 [INF] Executed action "WebApi.Controllers.AccountController.GetLogRegis (WebApp)" in 30.4856ms (afa2e885)
+2019-11-12T10:56:52.3292231+02:00 0HLR79P1A5Q14:00000001 [INF] Request finished in 147.52100000000002ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T11:04:20.8471745+02:00 0HLR79P1A5Q16:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/login application/json 86 (ca22a1cb)
+2019-11-12T11:04:20.8613318+02:00 0HLR79P1A5Q16:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Login(WebShop.BusinessLogic.ViewModels.LoginViewModel)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T11:04:20.9296890+02:00 0HLR79P1A5Q16:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T11:04:20.9589761+02:00 0HLR79P1A5Q16:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T11:04:20.9904144+02:00 0HLR79P1A5Q16:00000001 [INF] Log message in the Login() method (277c1ec8)
+2019-11-12T11:04:21.1168243+02:00 0HLR79P1A5Q16:00000001 [INF] Executed DbCommand ("25"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-11-12T11:04:21.2747900+02:00 0HLR79P1A5Q16:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-11-12T11:04:21.3359504+02:00 0HLR79P1A5Q16:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-11-12T11:04:21.3515667+02:00 0HLR79P1A5Q16:00000001 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-11-12T11:04:21.3639686+02:00 0HLR79P1A5Q16:00000001 [INF] Executed DbCommand ("0"ms) [Parameters=["@__login_Email_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[Email] = @__login_Email_0" (0723d8ff)
+2019-11-12T11:04:21.5053525+02:00 0HLR79P1A5Q16:00000001 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-11-12T11:04:21.5069888+02:00 0HLR79P1A5Q16:00000001 [INF] Executed action "WebApi.Controllers.AccountController.Login (WebApp)" in 645.4408000000001ms (afa2e885)
+2019-11-12T11:04:21.5096988+02:00 0HLR79P1A5Q16:00000001 [INF] Request finished in 664.7907ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T12:32:02.5662554+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-12T12:32:02.7547831+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T12:32:02.7702301+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T12:32:03.5594523+02:00 0HLR7BE7DFS1T:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-12T12:32:03.6553222+02:00 0HLR7BE7DFS1T:00000001 [INF] Route matched with "{action = \"GetLogRegis\", controller = \"Account\"}". Executing controller action with signature "System.String GetLogRegis()" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T12:32:03.6605609+02:00 0HLR7BE7DFS1T:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T12:32:03.6632250+02:00 0HLR7BE7DFS1T:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T12:32:03.6721442+02:00 0HLR7BE7DFS1T:00000001 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-11-12T12:32:03.6969287+02:00 0HLR7BE7DFS1T:00000001 [INF] Executed action "WebApi.Controllers.AccountController.GetLogRegis (WebApp)" in 35.4979ms (afa2e885)
+2019-11-12T12:32:03.6985199+02:00 0HLR7BE7DFS1T:00000001 [INF] Request finished in 142.0906ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T12:32:08.7206092+02:00 0HLR7BE7DFS1V:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/register application/json 78 (ca22a1cb)
+2019-11-12T12:32:08.7377796+02:00 0HLR7BE7DFS1V:00000001 [INF] Route matched with "{action = \"Register\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Register(WebShop.DataAccess1.User)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T12:32:08.7454095+02:00 0HLR7BE7DFS1V:00000001 [INF] Authorization failed. (b15dd539)
+2019-11-12T12:32:08.7458620+02:00 0HLR7BE7DFS1V:00000001 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'. (8b6446cb)
+2019-11-12T12:32:08.7485208+02:00 0HLR7BE7DFS1V:00000001 [INF] Executing ChallengeResult with authentication schemes ([]). (f3dca807)
+2019-11-12T12:32:08.7530353+02:00 0HLR7BE7DFS1V:00000001 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2019-11-12T12:32:08.7532319+02:00 0HLR7BE7DFS1V:00000001 [INF] Executed action "WebApi.Controllers.AccountController.Register (WebApp)" in 15.248600000000001ms (afa2e885)
+2019-11-12T12:32:08.7537635+02:00 0HLR7BE7DFS1V:00000001 [INF] Request finished in 33.4504ms 401  (791a596a)
+2019-11-12T12:33:35.5980533+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-12T12:33:35.7815115+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T12:33:35.7989633+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T12:33:36.3400651+02:00 0HLR7BF331BV5:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-12T12:33:36.4307777+02:00 0HLR7BF331BV5:00000001 [INF] Route matched with "{action = \"GetLogRegis\", controller = \"Account\"}". Executing controller action with signature "System.String GetLogRegis()" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T12:33:36.4385868+02:00 0HLR7BF331BV5:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T12:33:36.4411291+02:00 0HLR7BF331BV5:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T12:33:36.4546317+02:00 0HLR7BF331BV5:00000001 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-11-12T12:33:36.4700459+02:00 0HLR7BF331BV5:00000001 [INF] Executed action "WebApi.Controllers.AccountController.GetLogRegis (WebApp)" in 29.744500000000002ms (afa2e885)
+2019-11-12T12:33:36.4724941+02:00 0HLR7BF331BV5:00000001 [INF] Request finished in 135.9554ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T12:33:41.9525296+02:00 0HLR7BF331BV7:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/register application/json 78 (ca22a1cb)
+2019-11-12T12:33:41.9701663+02:00 0HLR7BF331BV7:00000001 [INF] Route matched with "{action = \"Register\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Register(WebShop.DataAccess1.User)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T12:33:41.9991366+02:00 0HLR7BF331BV7:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T12:33:42.0036613+02:00 0HLR7BF331BV7:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T12:33:42.0322849+02:00 0HLR7BF331BV7:00000001 [INF] Log message in the Register() method (46f49f21)
+2019-11-12T12:33:42.1964803+02:00 0HLR7BF331BV7:00000001 [INF] Executed DbCommand ("33"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-11-12T12:33:42.3695490+02:00 0HLR7BF331BV7:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 4000), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [Name], [NormalizedEmail], [NormalizedUserName], [Password], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [Surname], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);" (0723d8ff)
+2019-11-12T12:33:42.4302663+02:00 0HLR7BF331BV7:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-11-12T12:33:42.4649182+02:00 0HLR7BF331BV7:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-11-12T12:33:42.4808617+02:00 0HLR7BF331BV7:00000001 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-11-12T12:33:42.6746237+02:00 0HLR7BF331BV7:00000001 [INF] Executing ObjectResult, writing value of type '"System.Threading.Tasks.Task`1[[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (8a1b66c8)
+2019-11-12T12:33:42.6864690+02:00 0HLR7BF331BV7:00000001 [INF] Executed action "WebApi.Controllers.AccountController.Register (WebApp)" in 716.1432ms (afa2e885)
+2019-11-12T12:33:42.6892463+02:00 0HLR7BF331BV7:00000001 [INF] Request finished in 736.8498000000001ms 200 application/json; charset=utf-8 (791a596a)
+2019-11-12T12:47:47.7335875+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-12T12:47:47.9146425+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T12:47:47.9323800+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T12:47:48.5577429+02:00 0HLR7BN11M6MO:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-12T12:47:48.6379413+02:00 0HLR7BN11M6MO:00000001 [ERR] Request matched multiple actions resulting in ambiguity. Matching actions: "WebApi.Controllers.AccountController.GetLogRegis (WebApp)
+WebApi.Controllers.AccountController.ConfirmEmail (WebApp)" (ab9a4111)
+2019-11-12T12:47:48.6708652+02:00 0HLR7BN11M6MO:00000001 [ERR] Connection id ""0HLR7BN11M6MO"", Request id ""0HLR7BN11M6MO:00000001"": An unhandled exception was thrown by the application. (560e7d32)
+Microsoft.AspNetCore.Mvc.Infrastructure.AmbiguousActionException: Multiple actions matched. The following actions matched route data and had all constraints satisfied:
+
+WebApi.Controllers.AccountController.GetLogRegis (WebApp)
+WebApi.Controllers.AccountController.ConfirmEmail (WebApp)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionSelector.SelectBestCandidate(RouteContext context, IReadOnlyList`1 candidates)
+   at Microsoft.AspNetCore.Mvc.Routing.MvcAttributeRouteHandler.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.Tree.TreeRouter.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-11-12T12:47:48.6787077+02:00 0HLR7BN11M6MO:00000001 [INF] Request finished in 124.46140000000001ms 500  (791a596a)
+2019-11-12T12:48:30.2664308+02:00 0HLR7BN11M6MQ:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/register application/json 78 (ca22a1cb)
+2019-11-12T12:48:30.2942556+02:00 0HLR7BN11M6MQ:00000001 [INF] Route matched with "{action = \"Register\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Register(WebShop.DataAccess1.User)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T12:48:30.3090366+02:00 0HLR7BN11M6MQ:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T12:48:30.3123983+02:00 0HLR7BN11M6MQ:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T12:48:30.3506089+02:00 0HLR7BN11M6MQ:00000001 [INF] Log message in the Register() method (46f49f21)
+2019-11-12T12:48:30.5155486+02:00 0HLR7BN11M6MQ:00000001 [INF] Executed DbCommand ("32"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-11-12T12:48:30.6868972+02:00 0HLR7BN11M6MQ:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 4000), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [Name], [NormalizedEmail], [NormalizedUserName], [Password], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [Surname], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);" (0723d8ff)
+2019-11-12T12:48:30.7533712+02:00 0HLR7BN11M6MQ:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-11-12T12:48:30.7885462+02:00 0HLR7BN11M6MQ:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-11-12T12:48:30.8053549+02:00 0HLR7BN11M6MQ:00000001 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-11-12T12:48:31.1838755+02:00 0HLR7BN11M6MQ:00000001 [INF] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8" (7ec2a4e9)
+2019-11-12T12:48:31.1940516+02:00 0HLR7BN11M6MQ:00000001 [INF] Executed action "WebApi.Controllers.AccountController.Register (WebApp)" in 893.4131000000001ms (afa2e885)
+2019-11-12T12:48:31.1957291+02:00 0HLR7BN11M6MQ:00000001 [INF] Request finished in 929.6606ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T12:49:09.3461492+02:00 0HLR7BN11M6MQ:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/register application/json 78 (ca22a1cb)
+2019-11-12T12:49:09.3482102+02:00 0HLR7BN11M6MQ:00000002 [INF] Route matched with "{action = \"Register\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Register(WebShop.DataAccess1.User)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T12:49:09.3797612+02:00 0HLR7BN11M6MQ:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T12:49:09.3858244+02:00 0HLR7BN11M6MQ:00000002 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T12:49:09.3923635+02:00 0HLR7BN11M6MQ:00000002 [INF] Log message in the Register() method (46f49f21)
+2019-11-12T12:49:09.4075257+02:00 0HLR7BN11M6MQ:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-11-12T12:49:09.4175311+02:00 0HLR7BN11M6MQ:00000002 [WRN] User "5806656c-2c7b-4b43-9a8c-2e4007c0dc76" validation failed: "DuplicateUserName". (5dc28e15)
+2019-11-12T12:58:35.1555822+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-12T12:58:35.3513736+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T12:58:35.3674256+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T12:58:36.2824762+02:00 0HLR7BT235HB0:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-12T12:58:36.3681397+02:00 0HLR7BT235HB0:00000001 [ERR] Request matched multiple actions resulting in ambiguity. Matching actions: "WebApi.Controllers.AccountController.GetLogRegis (WebApp)
+WebApi.Controllers.AccountController.ConfirmEmail (WebApp)" (ab9a4111)
+2019-11-12T12:58:36.4009786+02:00 0HLR7BT235HB0:00000001 [ERR] Connection id ""0HLR7BT235HB0"", Request id ""0HLR7BT235HB0:00000001"": An unhandled exception was thrown by the application. (560e7d32)
+Microsoft.AspNetCore.Mvc.Infrastructure.AmbiguousActionException: Multiple actions matched. The following actions matched route data and had all constraints satisfied:
+
+WebApi.Controllers.AccountController.GetLogRegis (WebApp)
+WebApi.Controllers.AccountController.ConfirmEmail (WebApp)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionSelector.SelectBestCandidate(RouteContext context, IReadOnlyList`1 candidates)
+   at Microsoft.AspNetCore.Mvc.Routing.MvcAttributeRouteHandler.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.Tree.TreeRouter.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-11-12T12:58:36.4106705+02:00 0HLR7BT235HB0:00000001 [INF] Request finished in 132.6261ms 500  (791a596a)
+2019-11-12T12:58:45.6762522+02:00 0HLR7BT235HB2:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/register application/json 78 (ca22a1cb)
+2019-11-12T12:58:45.7006280+02:00 0HLR7BT235HB2:00000001 [INF] Route matched with "{action = \"Register\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Register(WebShop.DataAccess1.User)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T12:58:45.7050899+02:00 0HLR7BT235HB2:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T12:58:45.7079329+02:00 0HLR7BT235HB2:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T12:58:49.5459306+02:00 0HLR7BT235HB2:00000001 [INF] Log message in the Register() method (46f49f21)
+2019-11-12T12:59:18.1794520+02:00 0HLR7BT235HB2:00000001 [INF] Executed DbCommand ("29"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-11-12T12:59:18.2863732+02:00 0HLR7BT235HB2:00000001 [WRN] User "ab47da4e-eec7-4836-9170-e59d3b042abb" validation failed: "DuplicateUserName". (5dc28e15)
+2019-11-12T13:07:03.2677125+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-12T13:07:03.4680632+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T13:07:03.4841325+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T13:07:04.0612451+02:00 0HLR7C1PDKT4L:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-12T13:07:04.1483654+02:00 0HLR7C1PDKT4L:00000001 [ERR] Request matched multiple actions resulting in ambiguity. Matching actions: "WebApi.Controllers.AccountController.GetLogRegis (WebApp)
+WebApi.Controllers.AccountController.ConfirmEmail (WebApp)" (ab9a4111)
+2019-11-12T13:07:04.1878830+02:00 0HLR7C1PDKT4L:00000001 [ERR] Connection id ""0HLR7C1PDKT4L"", Request id ""0HLR7C1PDKT4L:00000001"": An unhandled exception was thrown by the application. (560e7d32)
+Microsoft.AspNetCore.Mvc.Infrastructure.AmbiguousActionException: Multiple actions matched. The following actions matched route data and had all constraints satisfied:
+
+WebApi.Controllers.AccountController.GetLogRegis (WebApp)
+WebApi.Controllers.AccountController.ConfirmEmail (WebApp)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionSelector.SelectBestCandidate(RouteContext context, IReadOnlyList`1 candidates)
+   at Microsoft.AspNetCore.Mvc.Routing.MvcAttributeRouteHandler.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.Tree.TreeRouter.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-11-12T13:07:04.1961206+02:00 0HLR7C1PDKT4L:00000001 [INF] Request finished in 138.4589ms 500  (791a596a)
+2019-11-12T13:07:08.3799417+02:00 0HLR7C1PDKT4N:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/register application/json 78 (ca22a1cb)
+2019-11-12T13:07:08.4325792+02:00 0HLR7C1PDKT4N:00000001 [INF] Route matched with "{action = \"Register\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Register(WebShop.DataAccess1.User)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T13:07:08.4406800+02:00 0HLR7C1PDKT4N:00000001 [INF] Antiforgery token validation failed. "The required antiforgery cookie \".AspNetCore.Antiforgery.lFdOKCqDLbY\" is not present." (843d91fe)
+Microsoft.AspNetCore.Antiforgery.AntiforgeryValidationException: The required antiforgery cookie ".AspNetCore.Antiforgery.lFdOKCqDLbY" is not present.
+   at Microsoft.AspNetCore.Antiforgery.DefaultAntiforgery.ValidateRequestAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.ValidateAntiforgeryTokenAuthorizationFilter.OnAuthorizationAsync(AuthorizationFilterContext context)
+2019-11-12T13:07:08.4411006+02:00 0HLR7C1PDKT4N:00000001 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.ValidateAntiforgeryTokenAuthorizationFilter"'. (8b6446cb)
+2019-11-12T13:07:08.4453374+02:00 0HLR7C1PDKT4N:00000001 [INF] Executing ObjectResult, writing value of type '"Microsoft.AspNetCore.Mvc.ProblemDetails"'. (8a1b66c8)
+2019-11-12T13:07:08.4584730+02:00 0HLR7C1PDKT4N:00000001 [INF] Executed action "WebApi.Controllers.AccountController.Register (WebApp)" in 19.243000000000002ms (afa2e885)
+2019-11-12T13:07:08.4588077+02:00 0HLR7C1PDKT4N:00000001 [INF] Request finished in 79.1662ms 400 application/problem+json; charset=utf-8 (791a596a)
+2019-11-12T13:08:06.2321211+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-12T13:08:06.4162022+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T13:08:06.4315792+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T13:08:07.0639956+02:00 0HLR7C2C6HH5U:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-12T13:08:07.1342755+02:00 0HLR7C2C6HH5U:00000001 [ERR] Request matched multiple actions resulting in ambiguity. Matching actions: "WebApi.Controllers.AccountController.GetLogRegis (WebApp)
+WebApi.Controllers.AccountController.ConfirmEmail (WebApp)" (ab9a4111)
+2019-11-12T13:08:07.1697619+02:00 0HLR7C2C6HH5U:00000001 [ERR] Connection id ""0HLR7C2C6HH5U"", Request id ""0HLR7C2C6HH5U:00000001"": An unhandled exception was thrown by the application. (560e7d32)
+Microsoft.AspNetCore.Mvc.Infrastructure.AmbiguousActionException: Multiple actions matched. The following actions matched route data and had all constraints satisfied:
+
+WebApi.Controllers.AccountController.GetLogRegis (WebApp)
+WebApi.Controllers.AccountController.ConfirmEmail (WebApp)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionSelector.SelectBestCandidate(RouteContext context, IReadOnlyList`1 candidates)
+   at Microsoft.AspNetCore.Mvc.Routing.MvcAttributeRouteHandler.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.Tree.TreeRouter.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-11-12T13:08:07.1773020+02:00 0HLR7C2C6HH5U:00000001 [INF] Request finished in 117.2981ms 500  (791a596a)
+2019-11-12T13:08:14.9525035+02:00 0HLR7C2C6HH60:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/register application/json 78 (ca22a1cb)
+2019-11-12T13:08:14.9757203+02:00 0HLR7C2C6HH60:00000001 [INF] Route matched with "{action = \"Register\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Register(WebShop.DataAccess1.User)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T13:08:14.9837794+02:00 0HLR7C2C6HH60:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T13:08:14.9886696+02:00 0HLR7C2C6HH60:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T13:08:23.5470747+02:00 0HLR7C2C6HH60:00000001 [INF] Log message in the Register() method (46f49f21)
+2019-11-12T13:08:36.1446421+02:00 0HLR7C2C6HH60:00000001 [INF] Executed DbCommand ("26"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-11-12T13:08:36.2428295+02:00 0HLR7C2C6HH60:00000001 [WRN] User "9573a937-bfe8-41a1-aa4f-5b889131453b" validation failed: "DuplicateUserName". (5dc28e15)
+2019-11-12T14:49:08.2857384+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-12T14:49:08.4747476+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T14:49:08.4916520+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T14:49:08.5867841+02:00  [FTL] Application startup exception (6c57a5ba)
+System.InvalidOperationException: Scheme already exists: Bearer
+   at Microsoft.AspNetCore.Authentication.AuthenticationOptions.AddScheme(String name, Action`1 configureBuilder)
+   at Microsoft.AspNetCore.Authentication.AuthenticationBuilder.<>c__DisplayClass4_0`2.<AddSchemeHelper>b__0(AuthenticationOptions o)
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsManager`1.<>c__DisplayClass5_0.<Get>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd(String name, Func`1 createOptions)
+   at Microsoft.Extensions.Options.OptionsManager`1.Get(String name)
+   at Microsoft.Extensions.Options.OptionsManager`1.get_Value()
+   at Microsoft.AspNetCore.Authentication.AuthenticationSchemeProvider..ctor(IOptions`1 options, IDictionary`2 schemes)
+   at Microsoft.AspNetCore.Authentication.AuthenticationSchemeProvider..ctor(IOptions`1 options)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass4_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.WebHost.BuildApplication()
+2019-11-12T14:49:53.6136794+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-12T14:49:53.8084715+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T14:49:53.8246009+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T14:49:54.7117795+02:00 0HLR7DR8DMO6G:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-12T14:49:54.8103991+02:00 0HLR7DR8DMO6G:00000001 [ERR] Request matched multiple actions resulting in ambiguity. Matching actions: "WebApi.Controllers.AccountController.GetLogRegis (WebApp)
+WebApi.Controllers.AccountController.ConfirmEmail (WebApp)" (ab9a4111)
+2019-11-12T14:49:54.8395503+02:00 0HLR7DR8DMO6G:00000001 [ERR] Connection id ""0HLR7DR8DMO6G"", Request id ""0HLR7DR8DMO6G:00000001"": An unhandled exception was thrown by the application. (560e7d32)
+Microsoft.AspNetCore.Mvc.Infrastructure.AmbiguousActionException: Multiple actions matched. The following actions matched route data and had all constraints satisfied:
+
+WebApi.Controllers.AccountController.GetLogRegis (WebApp)
+WebApi.Controllers.AccountController.ConfirmEmail (WebApp)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionSelector.SelectBestCandidate(RouteContext context, IReadOnlyList`1 candidates)
+   at Microsoft.AspNetCore.Mvc.Routing.MvcAttributeRouteHandler.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.Tree.TreeRouter.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-11-12T14:49:54.8486504+02:00 0HLR7DR8DMO6G:00000001 [INF] Request finished in 140.85930000000002ms 500  (791a596a)
+2019-11-12T14:50:33.5786486+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-12T14:50:33.7651186+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T14:50:33.7826283+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T14:50:34.2848242+02:00 0HLR7DRK6VHEI:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-12T14:50:34.3623011+02:00 0HLR7DRK6VHEI:00000001 [ERR] Request matched multiple actions resulting in ambiguity. Matching actions: "WebApi.Controllers.AccountController.GetLogRegis (WebApp)
+WebApi.Controllers.AccountController.ConfirmEmail (WebApp)" (ab9a4111)
+2019-11-12T14:50:34.4003723+02:00 0HLR7DRK6VHEI:00000001 [ERR] Connection id ""0HLR7DRK6VHEI"", Request id ""0HLR7DRK6VHEI:00000001"": An unhandled exception was thrown by the application. (560e7d32)
+Microsoft.AspNetCore.Mvc.Infrastructure.AmbiguousActionException: Multiple actions matched. The following actions matched route data and had all constraints satisfied:
+
+WebApi.Controllers.AccountController.GetLogRegis (WebApp)
+WebApi.Controllers.AccountController.ConfirmEmail (WebApp)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionSelector.SelectBestCandidate(RouteContext context, IReadOnlyList`1 candidates)
+   at Microsoft.AspNetCore.Mvc.Routing.MvcAttributeRouteHandler.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.Tree.TreeRouter.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-11-12T14:50:34.4106905+02:00 0HLR7DRK6VHEI:00000001 [INF] Request finished in 129.2612ms 500  (791a596a)
+2019-11-12T14:52:09.1101737+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-12T14:52:09.2977161+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T14:52:09.3168457+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T14:52:09.8717301+02:00 0HLR7DSGM5FF3:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-12T14:52:09.9619014+02:00 0HLR7DSGM5FF3:00000001 [INF] Route matched with "{action = \"GetLogRegis\", controller = \"Account\"}". Executing controller action with signature "System.String GetLogRegis()" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T14:52:09.9664796+02:00 0HLR7DSGM5FF3:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T14:52:09.9691257+02:00 0HLR7DSGM5FF3:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T14:52:09.9792322+02:00 0HLR7DSGM5FF3:00000001 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-11-12T14:52:09.9938979+02:00 0HLR7DSGM5FF3:00000001 [INF] Executed action "WebApi.Controllers.AccountController.GetLogRegis (WebApp)" in 25.1296ms (afa2e885)
+2019-11-12T14:52:09.9952274+02:00 0HLR7DSGM5FF3:00000001 [INF] Request finished in 126.72070000000001ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T14:52:23.5827050+02:00 0HLR7DSGM5FF5:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/login application/json 86 (ca22a1cb)
+2019-11-12T14:52:23.6023419+02:00 0HLR7DSGM5FF5:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Login(WebShop.BusinessLogic.ViewModels.LoginViewModel)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T14:52:23.6458810+02:00 0HLR7DSGM5FF5:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T14:52:23.6508489+02:00 0HLR7DSGM5FF5:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T14:52:23.6887352+02:00 0HLR7DSGM5FF5:00000001 [INF] Log message in the Login() method (277c1ec8)
+2019-11-12T14:52:23.8254408+02:00 0HLR7DSGM5FF5:00000001 [INF] Executed DbCommand ("34"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-11-12T14:52:23.9807764+02:00 0HLR7DSGM5FF5:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-11-12T14:52:24.0186961+02:00 0HLR7DSGM5FF5:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-11-12T14:52:24.0345956+02:00 0HLR7DSGM5FF5:00000001 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-11-12T14:52:24.0501309+02:00 0HLR7DSGM5FF5:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__login_Email_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[Email] = @__login_Email_0" (0723d8ff)
+2019-11-12T14:52:24.1933105+02:00 0HLR7DSGM5FF5:00000001 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-11-12T14:52:24.1955534+02:00 0HLR7DSGM5FF5:00000001 [INF] Executed action "WebApi.Controllers.AccountController.Login (WebApp)" in 592.9412ms (afa2e885)
+2019-11-12T14:52:24.1978147+02:00 0HLR7DSGM5FF5:00000001 [INF] Request finished in 615.4494000000001ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T14:52:26.4838645+02:00 0HLR7DSGM5FF5:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/login application/json 86 (ca22a1cb)
+2019-11-12T14:52:26.4867162+02:00 0HLR7DSGM5FF5:00000002 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Login(WebShop.BusinessLogic.ViewModels.LoginViewModel)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T14:52:26.4907924+02:00 0HLR7DSGM5FF5:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T14:52:26.4938951+02:00 0HLR7DSGM5FF5:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T14:52:26.5023803+02:00 0HLR7DSGM5FF5:00000002 [INF] Log message in the Login() method (277c1ec8)
+2019-11-12T14:52:26.5087771+02:00 0HLR7DSGM5FF5:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-11-12T14:52:26.5197569+02:00 0HLR7DSGM5FF5:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-11-12T14:52:26.5226777+02:00 0HLR7DSGM5FF5:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-11-12T14:52:26.5264650+02:00 0HLR7DSGM5FF5:00000002 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-11-12T14:52:26.5279309+02:00 0HLR7DSGM5FF5:00000002 [INF] Executed DbCommand ("0"ms) [Parameters=["@__login_Email_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[Email] = @__login_Email_0" (0723d8ff)
+2019-11-12T14:52:26.5300067+02:00 0HLR7DSGM5FF5:00000002 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-11-12T14:52:26.5305635+02:00 0HLR7DSGM5FF5:00000002 [INF] Executed action "WebApi.Controllers.AccountController.Login (WebApp)" in 43.6453ms (afa2e885)
+2019-11-12T14:52:26.5309441+02:00 0HLR7DSGM5FF5:00000002 [INF] Request finished in 47.350100000000005ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T14:52:41.7515151+02:00 0HLR7DSGM5FF5:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/login application/json 78 (ca22a1cb)
+2019-11-12T14:52:41.7539752+02:00 0HLR7DSGM5FF5:00000003 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Login(WebShop.BusinessLogic.ViewModels.LoginViewModel)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T14:52:41.7560822+02:00 0HLR7DSGM5FF5:00000003 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T14:52:41.7671041+02:00 0HLR7DSGM5FF5:00000003 [INF] Executed DbCommand ("10"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T14:52:41.7703197+02:00 0HLR7DSGM5FF5:00000003 [INF] Executing ObjectResult, writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'. (8a1b66c8)
+2019-11-12T14:52:41.7746974+02:00 0HLR7DSGM5FF5:00000003 [INF] Executed action "WebApi.Controllers.AccountController.Login (WebApp)" in 20.3245ms (afa2e885)
+2019-11-12T14:52:41.7755093+02:00 0HLR7DSGM5FF5:00000003 [INF] Request finished in 24.328ms 400 application/problem+json; charset=utf-8 (791a596a)
+2019-11-12T14:52:52.0216507+02:00 0HLR7DSGM5FF5:00000004 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/login application/json 74 (ca22a1cb)
+2019-11-12T14:52:52.0231938+02:00 0HLR7DSGM5FF5:00000004 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Login(WebShop.BusinessLogic.ViewModels.LoginViewModel)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T14:52:52.0298909+02:00 0HLR7DSGM5FF5:00000004 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T14:52:52.0365719+02:00 0HLR7DSGM5FF5:00000004 [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T14:52:52.0380634+02:00 0HLR7DSGM5FF5:00000004 [INF] Log message in the Login() method (277c1ec8)
+2019-11-12T14:52:52.0453624+02:00 0HLR7DSGM5FF5:00000004 [INF] Executed DbCommand ("6"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-11-12T14:52:52.0546692+02:00 0HLR7DSGM5FF5:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__user_Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-11-12T14:52:52.0560916+02:00 0HLR7DSGM5FF5:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-11-12T14:52:52.0584319+02:00 0HLR7DSGM5FF5:00000004 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-11-12T14:52:52.0597897+02:00 0HLR7DSGM5FF5:00000004 [INF] Executed DbCommand ("0"ms) [Parameters=["@__login_Email_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[Email] = @__login_Email_0" (0723d8ff)
+2019-11-12T14:52:52.0606063+02:00 0HLR7DSGM5FF5:00000004 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-11-12T14:52:52.0610015+02:00 0HLR7DSGM5FF5:00000004 [INF] Executed action "WebApi.Controllers.AccountController.Login (WebApp)" in 37.676100000000005ms (afa2e885)
+2019-11-12T14:52:52.0613034+02:00 0HLR7DSGM5FF5:00000004 [INF] Request finished in 39.8652ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T16:06:28.2439105+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-12T16:06:28.4356955+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T16:06:28.4519595+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T16:06:29.0831716+02:00 0HLR7F61KMQL7:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-12T16:06:29.1719292+02:00 0HLR7F61KMQL7:00000001 [INF] Route matched with "{action = \"GetLogRegis\", controller = \"Account\"}". Executing controller action with signature "System.String GetLogRegis()" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T16:06:29.1768479+02:00 0HLR7F61KMQL7:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T16:06:29.1797404+02:00 0HLR7F61KMQL7:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T16:06:29.1886286+02:00 0HLR7F61KMQL7:00000001 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-11-12T16:06:29.2069049+02:00 0HLR7F61KMQL7:00000001 [INF] Executed action "WebApi.Controllers.AccountController.GetLogRegis (WebApp)" in 28.881300000000003ms (afa2e885)
+2019-11-12T16:06:29.2132403+02:00 0HLR7F61KMQL7:00000001 [INF] Request finished in 131.9573ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T16:06:53.9903738+02:00 0HLR7F61KMQL9:00000001 [INF] Request starting HTTP/1.1 DELETE http://localhost:5001/api/user/delete application/json 90 (ca22a1cb)
+2019-11-12T16:06:54.0133260+02:00 0HLR7F61KMQL9:00000001 [INF] Route matched with "{action = \"Delete\", controller = \"User\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Delete(System.String)" on controller "WebApp.Controllers.UserController" ("WebApp"). (122b2fdf)
+2019-11-12T16:06:54.0448730+02:00 0HLR7F61KMQL9:00000001 [INF] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8" (7ec2a4e9)
+2019-11-12T16:06:54.0472397+02:00 0HLR7F61KMQL9:00000001 [INF] Executed action "WebApp.Controllers.UserController.Delete (WebApp)" in 33.7182ms (afa2e885)
+2019-11-12T16:06:54.0474436+02:00 0HLR7F61KMQL9:00000001 [INF] Request finished in 57.5559ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T16:08:51.0210505+02:00 0HLR7F61KMQL9:00000002 [INF] Request starting HTTP/1.1 DELETE http://localhost:5001/api/user/delete application/json 90 (ca22a1cb)
+2019-11-12T16:08:51.0253273+02:00 0HLR7F61KMQL9:00000002 [INF] Route matched with "{action = \"Delete\", controller = \"User\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Delete(System.String)" on controller "WebApp.Controllers.UserController" ("WebApp"). (122b2fdf)
+2019-11-12T16:08:51.0267685+02:00 0HLR7F61KMQL9:00000002 [INF] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8" (7ec2a4e9)
+2019-11-12T16:08:51.0272992+02:00 0HLR7F61KMQL9:00000002 [INF] Executed action "WebApp.Controllers.UserController.Delete (WebApp)" in 1.8196ms (afa2e885)
+2019-11-12T16:08:51.0274809+02:00 0HLR7F61KMQL9:00000002 [INF] Request finished in 6.7594ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T16:13:02.3741865+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-12T16:13:02.5873742+02:00  [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T16:13:02.6054063+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T16:13:03.6532729+02:00 0HLR7F9N6EF5S:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-12T16:13:03.7678037+02:00 0HLR7F9N6EF5S:00000001 [INF] Route matched with "{action = \"GetLogRegis\", controller = \"Account\"}". Executing controller action with signature "System.String GetLogRegis()" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T16:13:03.7721663+02:00 0HLR7F9N6EF5S:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T16:13:03.7895028+02:00 0HLR7F9N6EF5S:00000001 [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T16:13:03.8011773+02:00 0HLR7F9N6EF5S:00000001 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-11-12T16:13:03.8188843+02:00 0HLR7F9N6EF5S:00000001 [INF] Executed action "WebApi.Controllers.AccountController.GetLogRegis (WebApp)" in 45.0574ms (afa2e885)
+2019-11-12T16:13:03.8220770+02:00 0HLR7F9N6EF5S:00000001 [INF] Request finished in 173.9144ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T16:13:28.3138996+02:00 0HLR7F9N6EF5U:00000001 [INF] Request starting HTTP/1.1 DELETE http://localhost:5001/api/book/delete application/x-www-form-urlencoded 102 (ca22a1cb)
+2019-11-12T16:13:28.3272515+02:00 0HLR7F9N6EF5U:00000001 [INF] Route matched with "{action = \"Delete\", controller = \"Book\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Delete(System.String)" on controller "WebApi.Controllers.BookController" ("WebApp"). (122b2fdf)
+2019-11-12T16:13:28.3600135+02:00 0HLR7F9N6EF5U:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T16:13:28.3672671+02:00 0HLR7F9N6EF5U:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T16:13:28.4446234+02:00 0HLR7F9N6EF5U:00000001 [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2019-11-12T16:13:28.4501628+02:00 0HLR7F9N6EF5U:00000001 [INF] Executed action "WebApi.Controllers.BookController.Delete (WebApp)" in 122.7385ms (afa2e885)
+2019-11-12T16:13:28.4503828+02:00 0HLR7F9N6EF5U:00000001 [INF] Request finished in 136.79000000000002ms 200 application/json; charset=utf-8 (791a596a)
+2019-11-12T16:14:09.0798204+02:00 0HLR7F9N6EF5U:00000002 [INF] Request starting HTTP/1.1 DELETE http://localhost:5001/api/book/delete application/x-www-form-urlencoded 102 (ca22a1cb)
+2019-11-12T16:14:09.0824681+02:00 0HLR7F9N6EF5U:00000002 [INF] Route matched with "{action = \"Delete\", controller = \"Book\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Delete(System.String)" on controller "WebApi.Controllers.BookController" ("WebApp"). (122b2fdf)
+2019-11-12T16:14:09.1100045+02:00 0HLR7F9N6EF5U:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T16:14:09.1128220+02:00 0HLR7F9N6EF5U:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T16:14:53.3604290+02:00 0HLR7F9N6EF5U:00000002 [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2019-11-12T16:14:53.3620000+02:00 0HLR7F9N6EF5U:00000002 [INF] Executed action "WebApi.Controllers.BookController.Delete (WebApp)" in 44278.9784ms (afa2e885)
+2019-11-12T16:14:53.3629929+02:00 0HLR7F9N6EF5U:00000002 [INF] Request finished in 44283.2807ms 200 application/json; charset=utf-8 (791a596a)
+2019-11-12T16:16:53.9418091+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-12T16:16:54.1318439+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T16:16:54.1491716+02:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T16:16:54.8173422+02:00 0HLR7FBS4G0U7:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-12T16:16:54.9344359+02:00 0HLR7FBS4G0U7:00000001 [INF] Route matched with "{action = \"GetLogRegis\", controller = \"Account\"}". Executing controller action with signature "System.String GetLogRegis()" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T16:16:54.9390547+02:00 0HLR7FBS4G0U7:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T16:16:54.9448968+02:00 0HLR7FBS4G0U7:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T16:16:54.9547690+02:00 0HLR7FBS4G0U7:00000001 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-11-12T16:16:54.9730096+02:00 0HLR7FBS4G0U7:00000001 [INF] Executed action "WebApi.Controllers.AccountController.GetLogRegis (WebApp)" in 32.6458ms (afa2e885)
+2019-11-12T16:16:54.9747483+02:00 0HLR7FBS4G0U7:00000001 [INF] Request finished in 161.67350000000002ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T16:17:16.2972033+02:00 0HLR7FBS4G0U9:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/book/add application/x-www-form-urlencoded 102 (ca22a1cb)
+2019-11-12T16:17:16.3170309+02:00 0HLR7FBS4G0U9:00000001 [INF] Route matched with "{action = \"Add\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Add(WebShop.DataAccess1.Entities.Book)" on controller "WebApi.Controllers.BookController" ("WebApp"). (122b2fdf)
+2019-11-12T16:17:16.3558985+02:00 0HLR7FBS4G0U9:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T16:17:16.3675890+02:00 0HLR7FBS4G0U9:00000001 [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T16:17:16.4017934+02:00 0HLR7FBS4G0U9:00000001 [INF] Executing ObjectResult, writing value of type '"Microsoft.AspNetCore.Mvc.ProblemDetails"'. (8a1b66c8)
+2019-11-12T16:17:16.4236250+02:00 0HLR7FBS4G0U9:00000001 [INF] Executed action "WebApi.Controllers.BookController.Add (WebApp)" in 106.40400000000001ms (afa2e885)
+2019-11-12T16:17:16.4238961+02:00 0HLR7FBS4G0U9:00000001 [INF] Request finished in 126.9698ms 415 application/problem+json; charset=utf-8 (791a596a)
+2019-11-12T16:18:04.9719574+02:00 0HLR7FBS4G0U9:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/book/add application/x-www-form-urlencoded 97 (ca22a1cb)
+2019-11-12T16:18:04.9770997+02:00 0HLR7FBS4G0U9:00000002 [INF] Route matched with "{action = \"Add\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Add(WebShop.DataAccess1.Entities.Book)" on controller "WebApi.Controllers.BookController" ("WebApp"). (122b2fdf)
+2019-11-12T16:18:04.9782933+02:00 0HLR7FBS4G0U9:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T16:18:04.9821825+02:00 0HLR7FBS4G0U9:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T16:18:04.9835091+02:00 0HLR7FBS4G0U9:00000002 [INF] Executing ObjectResult, writing value of type '"Microsoft.AspNetCore.Mvc.ProblemDetails"'. (8a1b66c8)
+2019-11-12T16:18:04.9839996+02:00 0HLR7FBS4G0U9:00000002 [INF] Executed action "WebApi.Controllers.BookController.Add (WebApp)" in 6.7605ms (afa2e885)
+2019-11-12T16:18:04.9869644+02:00 0HLR7FBS4G0U9:00000002 [INF] Request finished in 13.385800000000001ms 415 application/problem+json; charset=utf-8 (791a596a)
+2019-11-12T16:18:32.0373157+02:00 0HLR7FBS4G0U9:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/book/get application/x-www-form-urlencoded 96 (ca22a1cb)
+2019-11-12T16:18:32.0533912+02:00 0HLR7FBS4G0U9:00000003 [INF] Route matched with "{action = \"Get\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get()" on controller "WebApi.Controllers.BookController" ("WebApp"). (122b2fdf)
+2019-11-12T16:18:32.0563660+02:00 0HLR7FBS4G0U9:00000003 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T16:18:32.0597967+02:00 0HLR7FBS4G0U9:00000003 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T16:18:32.0642205+02:00 0HLR7FBS4G0U9:00000003 [INF] Fetching all the Students from the storage (d9677de5)
+2019-11-12T16:18:32.1043206+02:00 0HLR7FBS4G0U9:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [b].[Id], [b].[Author], [b].[Name], [b].[Price], [b].[Year]
+FROM [Books] AS [b]" (0723d8ff)
+2019-11-12T16:18:32.1608735+02:00 0HLR7FBS4G0U9:00000003 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[WebShop.DataAccess1.Entities.Book, WebShop.DataAccess1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-11-12T16:18:32.1736495+02:00 0HLR7FBS4G0U9:00000003 [INF] Executed action "WebApi.Controllers.BookController.Get (WebApp)" in 119.8816ms (afa2e885)
+2019-11-12T16:18:32.1760526+02:00 0HLR7FBS4G0U9:00000003 [INF] Request finished in 141.9909ms 200 application/json; charset=utf-8 (791a596a)
+2019-11-12T16:19:10.8125522+02:00 0HLR7FBS4G0U9:00000004 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/book/add application/x-www-form-urlencoded 89 (ca22a1cb)
+2019-11-12T16:19:10.8144306+02:00 0HLR7FBS4G0U9:00000004 [INF] Route matched with "{action = \"Add\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Add(WebShop.DataAccess1.Entities.Book)" on controller "WebApi.Controllers.BookController" ("WebApp"). (122b2fdf)
+2019-11-12T16:19:10.8158700+02:00 0HLR7FBS4G0U9:00000004 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T16:19:10.8195978+02:00 0HLR7FBS4G0U9:00000004 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T16:19:10.8210400+02:00 0HLR7FBS4G0U9:00000004 [INF] Executing ObjectResult, writing value of type '"Microsoft.AspNetCore.Mvc.ProblemDetails"'. (8a1b66c8)
+2019-11-12T16:19:10.8217277+02:00 0HLR7FBS4G0U9:00000004 [INF] Executed action "WebApi.Controllers.BookController.Add (WebApp)" in 7.1244000000000005ms (afa2e885)
+2019-11-12T16:19:10.8219383+02:00 0HLR7FBS4G0U9:00000004 [INF] Request finished in 9.786ms 415 application/problem+json; charset=utf-8 (791a596a)
+2019-11-12T16:20:27.5216078+02:00 0HLR7FBS4G0U9:00000005 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/book/add application/x-www-form-urlencoded 87 (ca22a1cb)
+2019-11-12T16:20:27.5230132+02:00 0HLR7FBS4G0U9:00000005 [INF] Route matched with "{action = \"Add\", controller = \"Book\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Add(WebShop.DataAccess1.Entities.Book)" on controller "WebApi.Controllers.BookController" ("WebApp"). (122b2fdf)
+2019-11-12T16:20:27.5247135+02:00 0HLR7FBS4G0U9:00000005 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T16:20:27.5304649+02:00 0HLR7FBS4G0U9:00000005 [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T16:20:27.5322060+02:00 0HLR7FBS4G0U9:00000005 [INF] Executing ObjectResult, writing value of type '"Microsoft.AspNetCore.Mvc.ProblemDetails"'. (8a1b66c8)
+2019-11-12T16:20:27.5328468+02:00 0HLR7FBS4G0U9:00000005 [INF] Executed action "WebApi.Controllers.BookController.Add (WebApp)" in 9.5966ms (afa2e885)
+2019-11-12T16:20:27.5331208+02:00 0HLR7FBS4G0U9:00000005 [INF] Request finished in 11.7141ms 415 application/problem+json; charset=utf-8 (791a596a)
+2019-11-12T16:23:03.1660527+02:00 0HLR7FBS4G0U9:00000006 [INF] Request starting HTTP/1.1 DELETE http://localhost:5001/api/book/delete application/x-www-form-urlencoded 23 (ca22a1cb)
+2019-11-12T16:23:03.1713688+02:00 0HLR7FBS4G0U9:00000006 [INF] Route matched with "{action = \"Delete\", controller = \"Book\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Delete(System.String)" on controller "WebApi.Controllers.BookController" ("WebApp"). (122b2fdf)
+2019-11-12T16:23:03.1735596+02:00 0HLR7FBS4G0U9:00000006 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T16:23:03.1798861+02:00 0HLR7FBS4G0U9:00000006 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T16:23:57.2957620+02:00 0HLR7FBS4G0U9:00000006 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [b].[Id], [b].[Author], [b].[Name], [b].[Price], [b].[Year]
+FROM [Books] AS [b]" (0723d8ff)
+2019-11-12T16:24:37.2340364+02:00 0HLR7FBS4G0U9:00000006 [INF] Executing ObjectResult, writing value of type '"System.Boolean"'. (8a1b66c8)
+2019-11-12T16:24:37.2368180+02:00 0HLR7FBS4G0U9:00000006 [INF] Executed action "WebApi.Controllers.BookController.Delete (WebApp)" in 94065.1205ms (afa2e885)
+2019-11-12T16:24:37.2371760+02:00 0HLR7FBS4G0U9:00000006 [INF] Request finished in 94071.7562ms 200 application/json; charset=utf-8 (791a596a)
+2019-11-12T17:16:19.0344773+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-12T17:16:19.2218380+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T17:16:19.2392930+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T17:16:20.0025391+02:00 0HLR7GD2KM0QL:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-12T17:16:20.1066251+02:00 0HLR7GD2KM0QL:00000001 [INF] Route matched with "{action = \"GetLogRegis\", controller = \"Account\"}". Executing controller action with signature "System.String GetLogRegis()" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T17:16:20.1144036+02:00 0HLR7GD2KM0QL:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T17:16:20.1174132+02:00 0HLR7GD2KM0QL:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T17:16:20.1280779+02:00 0HLR7GD2KM0QL:00000001 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-11-12T17:16:20.1471390+02:00 0HLR7GD2KM0QL:00000001 [INF] Executed action "WebApi.Controllers.AccountController.GetLogRegis (WebApp)" in 31.7469ms (afa2e885)
+2019-11-12T17:16:20.1490921+02:00 0HLR7GD2KM0QL:00000001 [INF] Request finished in 150.36090000000002ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T17:16:52.3963166+02:00 0HLR7GD2KM0QN:00000001 [INF] Request starting HTTP/1.1 DELETE http://localhost:5001/api/book/delete application/x-www-form-urlencoded 73 (ca22a1cb)
+2019-11-12T17:16:52.4093287+02:00 0HLR7GD2KM0QN:00000001 [INF] Route matched with "{action = \"Delete\", controller = \"Book\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Delete(System.String)" on controller "WebApi.Controllers.BookController" ("WebApp"). (122b2fdf)
+2019-11-12T17:16:52.4389055+02:00 0HLR7GD2KM0QN:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T17:16:52.4470722+02:00 0HLR7GD2KM0QN:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T17:17:33.0514930+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-12T17:17:33.2393779+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T17:17:33.2555292+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T17:17:34.1869240+02:00 0HLR7GDOOESB3:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-12T17:17:34.2996897+02:00 0HLR7GDOOESB3:00000001 [INF] Route matched with "{action = \"GetLogRegis\", controller = \"Account\"}". Executing controller action with signature "System.String GetLogRegis()" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T17:17:34.3041611+02:00 0HLR7GDOOESB3:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T17:17:34.3068475+02:00 0HLR7GDOOESB3:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T17:17:34.3177494+02:00 0HLR7GDOOESB3:00000001 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-11-12T17:17:34.3355023+02:00 0HLR7GDOOESB3:00000001 [INF] Executed action "WebApi.Controllers.AccountController.GetLogRegis (WebApp)" in 29.212300000000003ms (afa2e885)
+2019-11-12T17:17:34.3368871+02:00 0HLR7GDOOESB3:00000001 [INF] Request finished in 154.59380000000002ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T17:17:49.3847019+02:00 0HLR7GDOOESB5:00000001 [INF] Request starting HTTP/1.1 DELETE http://localhost:5001/api/book/delete application/x-www-form-urlencoded 73 (ca22a1cb)
+2019-11-12T17:17:49.4005098+02:00 0HLR7GDOOESB5:00000001 [INF] Route matched with "{action = \"Delete\", controller = \"Book\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult Delete(System.String)" on controller "WebApi.Controllers.BookController" ("WebApp"). (122b2fdf)
+2019-11-12T17:17:49.4338733+02:00 0HLR7GDOOESB5:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T17:17:49.4382164+02:00 0HLR7GDOOESB5:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T18:02:20.2662033+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-12T18:02:20.4442110+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T18:02:20.4606431+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T18:02:21.4026584+02:00 0HLR7H6PIN40Q:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-12T18:02:21.5178746+02:00 0HLR7H6PIN40Q:00000001 [INF] Route matched with "{action = \"GetLogRegis\", controller = \"Account\"}". Executing controller action with signature "System.String GetLogRegis()" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T18:02:21.5236587+02:00 0HLR7H6PIN40Q:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T18:02:21.5318625+02:00 0HLR7H6PIN40Q:00000001 [INF] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T18:02:21.5413844+02:00 0HLR7H6PIN40Q:00000001 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-11-12T18:02:21.5568998+02:00 0HLR7H6PIN40Q:00000001 [INF] Executed action "WebApi.Controllers.AccountController.GetLogRegis (WebApp)" in 33.0907ms (afa2e885)
+2019-11-12T18:02:21.5584324+02:00 0HLR7H6PIN40Q:00000001 [INF] Request finished in 159.1442ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T18:02:27.8238968+02:00 0HLR7H6PIN40S:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/login application/json 74 (ca22a1cb)
+2019-11-12T18:02:27.8408934+02:00 0HLR7H6PIN40S:00000001 [INF] Route matched with "{action = \"Login\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Login(WebShop.BusinessLogic.ViewModels.LoginViewModel)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T18:02:27.8746080+02:00 0HLR7H6PIN40S:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T18:02:27.8855892+02:00 0HLR7H6PIN40S:00000001 [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T18:02:27.9182699+02:00 0HLR7H6PIN40S:00000001 [INF] Log message in the Login() method (277c1ec8)
+2019-11-12T18:02:28.1316214+02:00 0HLR7H6PIN40S:00000001 [ERR] Failed executing DbCommand ("48"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[Token], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (627a98df)
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:b3389a7b-b2f8-4920-a734-ba87050e80b8
+Error Number:207,State:1,Class:16
+2019-11-12T18:02:28.2324832+02:00 0HLR7H6PIN40S:00000001 [ERR] An exception occurred while iterating over the results of a query for context type '"WebShop.DataAccess1.Context.ApplicationContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:b3389a7b-b2f8-4920-a734-ba87050e80b8
+Error Number:207,State:1,Class:16" (f5c7ac34)
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:b3389a7b-b2f8-4920-a734-ba87050e80b8
+Error Number:207,State:1,Class:16
+2019-11-12T18:02:28.2389701+02:00 0HLR7H6PIN40S:00000001 [ERR] An exception occurred while iterating over the results of a query for context type '"WebShop.DataAccess1.Context.ApplicationContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+ClientConnectionId:b3389a7b-b2f8-4920-a734-ba87050e80b8
+Error Number:207,State:1,Class:16" (f5c7ac34)
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+ClientConnectionId:b3389a7b-b2f8-4920-a734-ba87050e80b8
+Error Number:207,State:1,Class:16
+2019-11-12T18:02:28.3533396+02:00 0HLR7H6PIN40S:00000001 [INF] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8" (7ec2a4e9)
+2019-11-12T18:02:28.3561324+02:00 0HLR7H6PIN40S:00000001 [INF] Executed action "WebApi.Controllers.AccountController.Login (WebApp)" in 515.0299ms (afa2e885)
+2019-11-12T18:02:28.3582880+02:00 0HLR7H6PIN40S:00000001 [INF] Request finished in 534.5601ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T18:03:43.3362797+02:00 0HLR7H6PIN40S:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account/get application/json 73 (ca22a1cb)
+2019-11-12T18:03:43.3444365+02:00 0HLR7H6PIN40S:00000002 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-11-12T18:03:43.3971706+02:00 0HLR7H6PIN40S:00000002 [INF] Request finished in 61.208600000000004ms 404  (791a596a)
+2019-11-12T18:04:08.5157569+02:00 0HLR7H6PIN40S:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/register application/json 84 (ca22a1cb)
+2019-11-12T18:04:08.5414722+02:00 0HLR7H6PIN40S:00000003 [INF] Route matched with "{action = \"Register\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Register(WebShop.DataAccess1.User)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T18:04:08.5468386+02:00 0HLR7H6PIN40S:00000003 [INF] Antiforgery token validation failed. "The required antiforgery cookie \".AspNetCore.Antiforgery.lFdOKCqDLbY\" is not present." (843d91fe)
+Microsoft.AspNetCore.Antiforgery.AntiforgeryValidationException: The required antiforgery cookie ".AspNetCore.Antiforgery.lFdOKCqDLbY" is not present.
+   at Microsoft.AspNetCore.Antiforgery.DefaultAntiforgery.ValidateRequestAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.ValidateAntiforgeryTokenAuthorizationFilter.OnAuthorizationAsync(AuthorizationFilterContext context)
+2019-11-12T18:04:08.5473084+02:00 0HLR7H6PIN40S:00000003 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.ValidateAntiforgeryTokenAuthorizationFilter"'. (8b6446cb)
+2019-11-12T18:04:08.5481720+02:00 0HLR7H6PIN40S:00000003 [INF] Executing ObjectResult, writing value of type '"Microsoft.AspNetCore.Mvc.ProblemDetails"'. (8a1b66c8)
+2019-11-12T18:04:08.5514183+02:00 0HLR7H6PIN40S:00000003 [INF] Executed action "WebApi.Controllers.AccountController.Register (WebApp)" in 9.618ms (afa2e885)
+2019-11-12T18:04:08.5515987+02:00 0HLR7H6PIN40S:00000003 [INF] Request finished in 36.3699ms 400 application/problem+json; charset=utf-8 (791a596a)
+2019-11-12T18:06:31.8135079+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-12T18:06:32.0026961+02:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T18:06:32.0206316+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T18:06:32.6248475+02:00 0HLR7H94EUU4F:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-12T18:06:32.7368695+02:00 0HLR7H94EUU4F:00000001 [INF] Route matched with "{action = \"GetLogRegis\", controller = \"Account\"}". Executing controller action with signature "System.String GetLogRegis()" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T18:06:32.7415537+02:00 0HLR7H94EUU4F:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T18:06:32.7481080+02:00 0HLR7H94EUU4F:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T18:06:32.7562181+02:00 0HLR7H94EUU4F:00000001 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-11-12T18:06:32.7741883+02:00 0HLR7H94EUU4F:00000001 [INF] Executed action "WebApi.Controllers.AccountController.GetLogRegis (WebApp)" in 31.1098ms (afa2e885)
+2019-11-12T18:06:32.7776722+02:00 0HLR7H94EUU4F:00000001 [INF] Request finished in 155.43720000000002ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T18:06:36.1157526+02:00 0HLR7H94EUU4H:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/register application/json 84 (ca22a1cb)
+2019-11-12T18:06:36.1331639+02:00 0HLR7H94EUU4H:00000001 [INF] Route matched with "{action = \"Register\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Register(WebShop.DataAccess1.User)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T18:06:36.1720464+02:00 0HLR7H94EUU4H:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T18:06:36.1824334+02:00 0HLR7H94EUU4H:00000001 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T18:06:36.2173711+02:00 0HLR7H94EUU4H:00000001 [INF] Log message in the Register() method (46f49f21)
+2019-11-12T18:06:36.4169692+02:00 0HLR7H94EUU4H:00000001 [ERR] Failed executing DbCommand ("33"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[Token], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (627a98df)
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:f2b95fc1-cb95-4afe-beca-36d81383cb1b
+Error Number:207,State:1,Class:16
+2019-11-12T18:06:36.4641504+02:00 0HLR7H94EUU4H:00000001 [ERR] An exception occurred while iterating over the results of a query for context type '"WebShop.DataAccess1.Context.ApplicationContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:f2b95fc1-cb95-4afe-beca-36d81383cb1b
+Error Number:207,State:1,Class:16" (f5c7ac34)
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:f2b95fc1-cb95-4afe-beca-36d81383cb1b
+Error Number:207,State:1,Class:16
+2019-11-12T18:06:36.4837051+02:00 0HLR7H94EUU4H:00000001 [ERR] An exception occurred while iterating over the results of a query for context type '"WebShop.DataAccess1.Context.ApplicationContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+ClientConnectionId:f2b95fc1-cb95-4afe-beca-36d81383cb1b
+Error Number:207,State:1,Class:16" (f5c7ac34)
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+ClientConnectionId:f2b95fc1-cb95-4afe-beca-36d81383cb1b
+Error Number:207,State:1,Class:16
+2019-11-12T18:06:36.6322021+02:00 0HLR7H94EUU4H:00000001 [INF] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8" (7ec2a4e9)
+2019-11-12T18:06:36.6347884+02:00 0HLR7H94EUU4H:00000001 [INF] Executed action "WebApi.Controllers.AccountController.Register (WebApp)" in 501.40310000000005ms (afa2e885)
+2019-11-12T18:06:36.6365353+02:00 0HLR7H94EUU4H:00000001 [INF] Request finished in 521.2355ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T18:09:33.9456974+02:00 0HLR7H94EUU4H:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/register application/json 84 (ca22a1cb)
+2019-11-12T18:09:33.9492993+02:00 0HLR7H94EUU4H:00000002 [INF] Route matched with "{action = \"Register\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Register(WebShop.DataAccess1.User)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T18:09:33.9521530+02:00 0HLR7H94EUU4H:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T18:09:33.9622122+02:00 0HLR7H94EUU4H:00000002 [INF] Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T18:09:33.9741584+02:00 0HLR7H94EUU4H:00000002 [INF] Log message in the Register() method (46f49f21)
+2019-11-12T18:09:33.9981572+02:00 0HLR7H94EUU4H:00000002 [ERR] Failed executing DbCommand ("7"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[Token], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (627a98df)
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:f2b95fc1-cb95-4afe-beca-36d81383cb1b
+Error Number:207,State:1,Class:16
+2019-11-12T18:09:34.0044945+02:00 0HLR7H94EUU4H:00000002 [ERR] An exception occurred while iterating over the results of a query for context type '"WebShop.DataAccess1.Context.ApplicationContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:f2b95fc1-cb95-4afe-beca-36d81383cb1b
+Error Number:207,State:1,Class:16" (f5c7ac34)
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+ClientConnectionId:f2b95fc1-cb95-4afe-beca-36d81383cb1b
+Error Number:207,State:1,Class:16
+2019-11-12T18:09:34.0141847+02:00 0HLR7H94EUU4H:00000002 [ERR] An exception occurred while iterating over the results of a query for context type '"WebShop.DataAccess1.Context.ApplicationContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+ClientConnectionId:f2b95fc1-cb95-4afe-beca-36d81383cb1b
+Error Number:207,State:1,Class:16" (f5c7ac34)
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+   at Microsoft.AspNetCore.Identity.UserValidator`1.ValidateUserName(UserManager`1 manager, TUser user, ICollection`1 errors)
+   at Microsoft.AspNetCore.Identity.UserValidator`1.ValidateAsync(UserManager`1 manager, TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.ValidateUserAsync(TUser user)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+ClientConnectionId:f2b95fc1-cb95-4afe-beca-36d81383cb1b
+Error Number:207,State:1,Class:16
+2019-11-12T18:09:34.1304343+02:00 0HLR7H94EUU4H:00000002 [INF] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8" (7ec2a4e9)
+2019-11-12T18:09:34.1309401+02:00 0HLR7H94EUU4H:00000002 [INF] Executed action "WebApi.Controllers.AccountController.Register (WebApp)" in 181.5114ms (afa2e885)
+2019-11-12T18:09:34.1311763+02:00 0HLR7H94EUU4H:00000002 [INF] Request finished in 185.8299ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T18:12:08.0604772+02:00  [INF] User profile is available. Using '"C:\Users\Anuitex-50\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2019-11-12T18:12:08.2525370+02:00  [INF] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Books] AS [b])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T18:12:08.2713854+02:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Authors] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END" (0723d8ff)
+2019-11-12T18:12:09.1046691+02:00 0HLR7HC8O9R7B:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/account   (ca22a1cb)
+2019-11-12T18:12:09.2173278+02:00 0HLR7HC8O9R7B:00000001 [INF] Route matched with "{action = \"GetLogRegis\", controller = \"Account\"}". Executing controller action with signature "System.String GetLogRegis()" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T18:12:09.2218033+02:00 0HLR7HC8O9R7B:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T18:12:09.2249998+02:00 0HLR7HC8O9R7B:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T18:12:09.2366191+02:00 0HLR7HC8O9R7B:00000001 [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-11-12T18:12:09.2551340+02:00 0HLR7HC8O9R7B:00000001 [INF] Executed action "WebApi.Controllers.AccountController.GetLogRegis (WebApp)" in 31.7805ms (afa2e885)
+2019-11-12T18:12:09.2565830+02:00 0HLR7HC8O9R7B:00000001 [INF] Request finished in 156.7589ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T18:12:12.1968905+02:00 0HLR7HC8O9R7D:00000001 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/register application/json 84 (ca22a1cb)
+2019-11-12T18:12:12.2225327+02:00 0HLR7HC8O9R7D:00000001 [INF] Route matched with "{action = \"Register\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Register(WebShop.DataAccess1.User)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T18:12:12.2695652+02:00 0HLR7HC8O9R7D:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T18:12:12.2739450+02:00 0HLR7HC8O9R7D:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T18:12:15.6411206+02:00 0HLR7HC8O9R7D:00000001 [INF] Log message in the Register() method (46f49f21)
+2019-11-12T18:12:21.9057391+02:00 0HLR7HC8O9R7D:00000001 [ERR] Failed executing DbCommand ("31"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[Token], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (627a98df)
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:efea8885-e58c-44cb-aab6-6e9ed275179f
+Error Number:207,State:1,Class:16
+2019-11-12T18:12:21.9552112+02:00 0HLR7HC8O9R7D:00000001 [ERR] An exception occurred while iterating over the results of a query for context type '"WebShop.DataAccess1.Context.ApplicationContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:efea8885-e58c-44cb-aab6-6e9ed275179f
+Error Number:207,State:1,Class:16" (f5c7ac34)
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:efea8885-e58c-44cb-aab6-6e9ed275179f
+Error Number:207,State:1,Class:16
+2019-11-12T18:12:21.9742660+02:00 0HLR7HC8O9R7D:00000001 [ERR] An exception occurred while iterating over the results of a query for context type '"WebShop.DataAccess1.Context.ApplicationContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+ClientConnectionId:efea8885-e58c-44cb-aab6-6e9ed275179f
+Error Number:207,State:1,Class:16" (f5c7ac34)
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+ClientConnectionId:efea8885-e58c-44cb-aab6-6e9ed275179f
+Error Number:207,State:1,Class:16
+2019-11-12T18:12:22.2368930+02:00 0HLR7HC8O9R7D:00000001 [INF] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8" (7ec2a4e9)
+2019-11-12T18:12:22.2398028+02:00 0HLR7HC8O9R7D:00000001 [INF] Executed action "WebApi.Controllers.AccountController.Register (WebApp)" in 10016.956ms (afa2e885)
+2019-11-12T18:12:22.2416737+02:00 0HLR7HC8O9R7D:00000001 [INF] Request finished in 10045.1075ms 200 text/plain; charset=utf-8 (791a596a)
+2019-11-12T18:12:34.2218763+02:00 0HLR7HC8O9R7D:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:5001/api/account/register application/json 84 (ca22a1cb)
+2019-11-12T18:12:34.2260170+02:00 0HLR7HC8O9R7D:00000002 [INF] Route matched with "{action = \"Register\", controller = \"Account\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Object] Register(WebShop.DataAccess1.User)" on controller "WebApi.Controllers.AccountController" ("WebApp"). (122b2fdf)
+2019-11-12T18:12:34.2294441+02:00 0HLR7HC8O9R7D:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"ApplicationContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-11-12T18:12:34.2331094+02:00 0HLR7HC8O9R7D:00000002 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0" (0723d8ff)
+2019-11-12T18:12:39.8299404+02:00 0HLR7HC8O9R7D:00000002 [INF] Log message in the Register() method (46f49f21)
+2019-11-12T18:13:07.8188633+02:00 0HLR7HC8O9R7D:00000002 [ERR] Failed executing DbCommand ("23"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Name], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[Password], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Surname], [u].[Token], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (627a98df)
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:efea8885-e58c-44cb-aab6-6e9ed275179f
+Error Number:207,State:1,Class:16
+2019-11-12T18:13:07.8426527+02:00 0HLR7HC8O9R7D:00000002 [ERR] An exception occurred while iterating over the results of a query for context type '"WebShop.DataAccess1.Context.ApplicationContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:efea8885-e58c-44cb-aab6-6e9ed275179f
+Error Number:207,State:1,Class:16" (f5c7ac34)
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:efea8885-e58c-44cb-aab6-6e9ed275179f
+Error Number:207,State:1,Class:16
+2019-11-12T18:13:07.8538561+02:00 0HLR7HC8O9R7D:00000002 [ERR] An exception occurred while iterating over the results of a query for context type '"WebShop.DataAccess1.Context.ApplicationContext"'."
+""System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+ClientConnectionId:efea8885-e58c-44cb-aab6-6e9ed275179f
+Error Number:207,State:1,Class:16" (f5c7ac34)
+System.Data.SqlClient.SqlException (0x80131904): Invalid column name 'Token'.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__126_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.FirstOrDefault_[TSource](IAsyncEnumerable`1 source, CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\First.cs:line 144
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.TaskResultAsyncEnumerable`1.Enumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteSingletonAsyncQuery[TResult](QueryContext queryContext, Func`2 compiledQuery, IDiagnosticsLogger`1 logger, Type contextType)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+ClientConnectionId:efea8885-e58c-44cb-aab6-6e9ed275179f
+Error Number:207,State:1,Class:16
+2019-11-12T18:13:08.1231384+02:00 0HLR7HC8O9R7D:00000002 [INF] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8" (7ec2a4e9)
+2019-11-12T18:13:08.1245008+02:00 0HLR7HC8O9R7D:00000002 [INF] Executed action "WebApi.Controllers.AccountController.Register (WebApp)" in 33898.036100000005ms (afa2e885)
+2019-11-12T18:13:08.1256828+02:00 0HLR7HC8O9R7D:00000002 [INF] Request finished in 33903.724500000004ms 200 text/plain; charset=utf-8 (791a596a)

@@ -25,6 +25,7 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using WebShop.DataAccess1.Entities;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace WebApp
 {
@@ -96,9 +97,9 @@ namespace WebApp
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseHttpsRedirection();
-
+     
             app.UseRouting();
+            app.UseStaticFiles();
 
             app.UseAuthorization();
 

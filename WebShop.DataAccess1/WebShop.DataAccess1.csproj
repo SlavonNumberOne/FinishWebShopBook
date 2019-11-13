@@ -17,12 +17,29 @@
     <Compile Remove="Migrations\20191105161251_BookInit.Designer.cs" />
     <Compile Remove="Migrations\20191107160145_BookInit.cs" />
     <Compile Remove="Migrations\20191107160145_BookInit.Designer.cs" />
+    <Compile Remove="Migrations\20191108142820_BookInit.cs" />
+    <Compile Remove="Migrations\20191108142820_BookInit.Designer.cs" />
+    <Compile Remove="Migrations\20191113075609_BookWebShop.cs" />
+    <Compile Remove="Migrations\20191113075609_BookWebShop.Designer.cs" />
+    <Compile Remove="Migrations\20191113082455_BookWebShop.cs" />
+    <Compile Remove="Migrations\20191113082455_BookWebShop.Designer.cs" />
+    <Compile Remove="Migrations\20191113082636_BookWebShop.cs" />
+    <Compile Remove="Migrations\20191113082636_BookWebShop.Designer.cs" />
+    <Compile Remove="Migrations\20191113095007_BookWeb.cs" />
+    <Compile Remove="Migrations\20191113095007_BookWeb.Designer.cs" />
+    <Compile Remove="Migrations\20191113095805_BookWebShop.cs" />
+    <Compile Remove="Migrations\20191113095805_BookWebShop.Designer.cs" />
+    <Compile Remove="Migrations\20191113100347_BookWebShop.cs" />
+    <Compile Remove="Migrations\20191113100347_BookWebShop.Designer.cs" />
+    <Compile Remove="Migrations\20191113100654_BookWebShop.cs" />
+    <Compile Remove="Migrations\20191113100654_BookWebShop.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.0" />

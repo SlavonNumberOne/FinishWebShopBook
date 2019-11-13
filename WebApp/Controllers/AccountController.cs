@@ -20,6 +20,11 @@ using WebApp.Filters;
 using System.Net.Mail;
 using WebShop.BusinessLogic.Service;
 using System.Data.Entity;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using WebShop.BusinessLogic.Helpers;
+using WebShop.DataAccess1.Interfaces;
 
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -28,18 +33,23 @@ namespace WebApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    //[Authorize]
     public class AccountController : Controller
     {
         private readonly SignInManager<User> _signInManager;
         private readonly UserManager<User> _userManager;
         private readonly IConfiguration _configuration;
         private readonly ILogger<AccountController> _logger;
+       // private ApplicationContext _context;
+  
         public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, IConfiguration configuration, ILogger<AccountController> logger)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _configuration = configuration;
             _logger = logger;
+            //_context = context;
+            //_userRepositive = userRepositive;
         }
 
         [ExceptionFilter]
@@ -74,16 +84,15 @@ namespace WebApi.Controllers
         [HttpPost("register")]
         public async Task<object> Register([FromBody] User regist)
         {
-               _logger.LogInformation("Log message in the Register() method");
-                var user = new User{UserName = regist.Email, Name = regist.Name, Email = regist.Email, PasswordHash = regist.PasswordHash};
-                                     
-                var result = await _userManager.CreateAsync(user, regist.PasswordHash);
-                if (result.Succeeded)
-                {
-                    await _signInManager.SignInAsync(user, false);
-                    return GenerateJwtToken(regist.Email, user);
-                }
-                throw new ApplicationException("UNKNOWN_ERROR");
+            _logger.LogInformation("Log message in the Register() method");
+            var user = new User { UserName = regist.Email, Name = regist.Name, Email = regist.Email, PasswordHash = regist.PasswordHash };
+            var result = await _userManager.CreateAsync(user, regist.PasswordHash);
+            if (result.Succeeded)
+            {
+                await _signInManager.SignInAsync(user, false);
+                return GenerateJwtToken(regist.Email, user);
+            }
+            throw new ApplicationException("UNKNOWN_ERROR");
         }
 
         [ExceptionFilter]
@@ -93,9 +102,9 @@ namespace WebApi.Controllers
                 {
                     new Claim(JwtRegisteredClaimNames.Sub, email),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim(ClaimTypes.NameIdentifier, user.Id)
+                    new Claim(ClaimTypes.NameIdentifier, user.Name),
+                   
                 };
-
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtKey"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
             var expires = DateTime.Now.AddDays(Convert.ToDouble(_configuration["JwtExpireDays"]));

@@ -9,12 +9,12 @@ namespace WebShop.BusinessLogic.Servises.Interface
 {
    public interface IBookService
     {
-        Task<IEnumerable<Book>> Get();
+        Task<IEnumerable<Book>> GetBooks();
         Task<Book> GetById(string id);
         Task<Book> Add(Book book);
         Book Update(Book book);
         bool Delete(string id);
-        //List<string> GetNameBooks(List<int> booksId);
+       
 
     }
 }

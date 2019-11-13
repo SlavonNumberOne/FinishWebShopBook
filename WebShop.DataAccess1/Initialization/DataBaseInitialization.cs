@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using WebShop.DataAccess1.Context;
 using WebShop.DataAccess1.Entities;
-using Microsoft.Extensions.DependencyInjection;
+
 
 namespace WebShop.DataAccess1.Initialization
 {
     public class DataBaseInitialization
     {
         private readonly ApplicationContext _context;
-
+    
         public DataBaseInitialization(ApplicationContext context)
         {
             _context = context;
@@ -53,6 +50,5 @@ namespace WebShop.DataAccess1.Initialization
             }
             _context.SaveChanges();
         }
-
     }
 }

@@ -22,9 +22,9 @@ namespace WebShop.BusinessLogic.Service
         {
             return _repository.Update(user);
         }
-        //public Task<User> Delete(string id)
-        //{
-        //    return  _repository.Delete(id);
-        //}
+        public bool Delete(string name)
+        {
+            return _repository.Delete(name);
+        }
     }
 }

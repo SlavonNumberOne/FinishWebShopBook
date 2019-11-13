@@ -20,25 +20,27 @@ namespace WebShop.DataAccess1.EFRepositories
         {
             return await _context.Users.ToAsyncEnumerable().ToList();
         }
-
         public User Update(User user)
         {
             _context.Set<User>().Update(user);
             _context.SaveChanges();
             return user;
         }
-        //public async User Delete(string id)
-        //{
-        //    try
-        //    {
-        //        User user = _context.Users.Find(id);
-        //        var resus = _context.Users.Remove(user);
-        //        return user;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ;
-        //    } 
+        public bool Delete(string name)
+        {
+            try
+            {
+                User user = _context.Users.Find(name);
+                var res = _context.Users.Remove(user);
+                _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+        }
         
     }
 }

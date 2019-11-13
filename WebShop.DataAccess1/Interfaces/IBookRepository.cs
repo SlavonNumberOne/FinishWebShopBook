@@ -8,7 +8,7 @@ namespace WebShop.DataAccess1.Interfaces
 {
   public  interface IBookRepository
     {
-        Task<IEnumerable<Book>> Get();
+        Task<IEnumerable<Book>> GetBooks();
         Task<Book> GetById(string id);
         Task<Book> Add(Book book);
         Book Update(Book book);

@@ -8,7 +8,6 @@ namespace WebShop.DataAccess1.Interfaces
     {
         Task<IEnumerable<User>> Get();
         User Update(User user);
-        //bool Delete(string id);
-        
+        bool Delete(string name);
     }
 }

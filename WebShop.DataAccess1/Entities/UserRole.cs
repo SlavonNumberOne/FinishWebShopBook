@@ -8,5 +8,6 @@ namespace WebShop.DataAccess1.Entities
     {
         public Role Role { get; set; }
         public User User { get; set; }
+       
     }
 }

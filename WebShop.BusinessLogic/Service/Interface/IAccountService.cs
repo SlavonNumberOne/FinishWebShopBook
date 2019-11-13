@@ -8,7 +8,7 @@ namespace WebShop.BusinessLogic.Servises.Interface
 {
     public interface IAccountService
     {
-        void SignUp(string username, string password);
-
+        void Login();
+        void Register();
     }
 }

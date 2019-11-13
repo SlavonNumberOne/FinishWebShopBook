@@ -1,14 +1,13 @@
-﻿using System;
+﻿using MailKit.Net.Smtp;
+using MimeKit;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using MimeKit;
-using MailKit.Net.Smtp;
-using Microsoft.AspNet.Identity;
 
-namespace WebShop.BusinessLogic.Service
+namespace WebShop.BusinessLogic.Helpers
 {
-    public class EmailService
+   public class EmailHelper
     {
         public async Task SendEmailAsync(string email, string subject, string message)
         {
@@ -24,7 +23,7 @@ namespace WebShop.BusinessLogic.Service
 
             using (var client = new SmtpClient())
             {
-                await client.ConnectAsync("slaviksamchenko@gmail.com", 25, false);
+                await client.ConnectAsync("smtp.gmail.com", 25, false);
                 await client.AuthenticateAsync("slaviksamchenko@gmail.com", "password");
                 await client.SendAsync(emailMessage);
 
@@ -33,4 +32,3 @@ namespace WebShop.BusinessLogic.Service
         }
     }
 }
-

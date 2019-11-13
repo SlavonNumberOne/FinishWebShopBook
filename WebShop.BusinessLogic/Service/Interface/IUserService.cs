@@ -10,7 +10,7 @@ namespace WebShop.BusinessLogic.Service.Interface
    {
         Task<IEnumerable<User>> Get();
         User Update(User user);
-      //  Task<User> Delete(string id);
-   }
+        bool Delete(string name);
+    }
 
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace WebShop.DataAccess1.EFRepositories
         {
             _context = context;
         }
-        public async Task<IEnumerable<Book>> Get()
+        public async Task<IEnumerable<Book>> GetBooks()
         {
             return await _context.Books.ToAsyncEnumerable().ToList();
 
@@ -43,6 +44,7 @@ namespace WebShop.DataAccess1.EFRepositories
             {
                 Book book = _context.Books.Find(id);
                 var res = _context.Books.Remove(book);
+                _context.SaveChangesAsync();
                 return true;
             }
             catch (Exception ex)
